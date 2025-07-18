@@ -1,4 +1,4 @@
-package com.cu6.avaritia_expand.item;
+package com.cu6.avaritia_expand.item.shield;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -16,12 +16,12 @@ import net.minecraftforge.common.ToolActions;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class ModShieldItem extends ShieldItem {
+public class BlazeShieldItem extends ShieldItem {
     public static final int EFFECTIVE_BLOCK_DELAY = 5;
     public static final float MINIMUM_DURABILITY_DAMAGE = 3.0F;
     public static final String TAG_BASE_COLOR = "Base";
 
-    public  ModShieldItem(Item.Properties pProperties) {
+    public BlazeShieldItem(Item.Properties pProperties) {
         super(pProperties);
         DispenserBlock.registerBehavior(this, ArmorItem.DISPENSE_ITEM_BEHAVIOR);
     }

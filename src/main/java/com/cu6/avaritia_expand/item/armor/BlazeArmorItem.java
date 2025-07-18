@@ -1,10 +1,10 @@
-package com.cu6.avaritia_expand.item;
+package com.cu6.avaritia_expand.item.armor;
 
+import com.cu6.avaritia_expand.item.ModArmorMaterials;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
@@ -13,12 +13,12 @@ import net.minecraft.world.level.Level;
 
 import java.util.Map;
 
-public class ModArmorItem extends ArmorItem {
+public class BlazeArmorItem extends ArmorItem {
     public static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<ArmorMaterial,MobEffectInstance>())
                     .put(ModArmorMaterials.BLAZE_CUBE,
                             new MobEffectInstance(MobEffects.FIRE_RESISTANCE,2147483647,0,false,false,false)).build();
-    public ModArmorItem(ArmorMaterial pMaterial, Type pType, Properties pProperties) {
+    public BlazeArmorItem(ArmorMaterial pMaterial, Type pType, Properties pProperties) {
         super(pMaterial, pType, pProperties);
     }
 

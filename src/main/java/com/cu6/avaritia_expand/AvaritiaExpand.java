@@ -1,6 +1,8 @@
 package com.cu6.avaritia_expand;
 
+import com.cu6.avaritia_expand.block.ModBlocks;
 import com.cu6.avaritia_expand.item.ModCreativeModTabs;
+import com.cu6.avaritia_expand.item.ModItemProperties;
 import com.cu6.avaritia_expand.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.item.ItemProperties;
@@ -28,6 +30,7 @@ public class AvaritiaExpand {
     public AvaritiaExpand(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
         ModCreativeModTabs.register(modEventBus);
+        ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
 
@@ -56,12 +59,7 @@ public class AvaritiaExpand {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            event.enqueueWork(() -> {
-                // 注册 blocking 属性
-                ItemProperties.register(ModItems.BLAZE_SHIELD.get(),
-                        new ResourceLocation("blocking"),
-                        (stack, world, entity, seed) ->
-                                entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F);});
+            ModItemProperties.register(event);
         }
     }
 }

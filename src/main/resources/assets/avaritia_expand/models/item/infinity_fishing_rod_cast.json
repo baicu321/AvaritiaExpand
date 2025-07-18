@@ -1,0 +1,6 @@
+{
+  "parent": "avaritia_expand:item/infinity_fishing_rod",
+  "textures": {
+    "layer0": "avaritia_expand:item/infinity_fishing_rod_cast"
+  }
+}

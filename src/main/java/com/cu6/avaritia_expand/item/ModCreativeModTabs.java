@@ -1,6 +1,7 @@
 package com.cu6.avaritia_expand.item;
 
 import com.cu6.avaritia_expand.AvaritiaExpand;
+import com.cu6.avaritia_expand.block.ModBlocks;
 import committee.nova.mods.avaritia.init.registry.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -18,6 +19,7 @@ public class ModCreativeModTabs {
             ()-> CreativeModeTab.builder().icon(()->new ItemStack(ModItems.infinity_nugget.get()))
                     .title(Component.translatable("creativetab.expand_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
+                        //item
                         output.accept(com.cu6.avaritia_expand.item.ModItems.CRYSTAL_HELMET.get());
                         output.accept(com.cu6.avaritia_expand.item.ModItems.CRYSTAL_CHESTPLATE.get());
                         output.accept(com.cu6.avaritia_expand.item.ModItems.CRYSTAL_LEGGINGS.get());
@@ -27,7 +29,9 @@ public class ModCreativeModTabs {
                         output.accept(com.cu6.avaritia_expand.item.ModItems.BLAZE_LEGGINGS.get());
                         output.accept(com.cu6.avaritia_expand.item.ModItems.BLAZE_BOOTS.get());
                         output.accept(com.cu6.avaritia_expand.item.ModItems.BLAZE_SHIELD.get());
-
+                        output.accept(com.cu6.avaritia_expand.item.ModItems.INFINITY_FISHINGROD.get());
+                        //block
+                        output.accept(ModBlocks.INFINITY_FURNACE.get());
                     })
                     .build());
 
