@@ -1,3 +1,11 @@
 {
-  "item.avaritia_expand.crystal_chestplate": "Crystal Chestplate"
+  "creativetab.expand_tab": "Avaritia : Expand",
+  "item.avaritia_expand.crystal_helmet": "Crystal Helmet",
+  "item.avaritia_expand.crystal_chestplate": "Crystal Chestplate",
+  "item.avaritia_expand.crystal_leggings": "Crystal Leggings",
+  "item.avaritia_expand.crystal_boots": "Crystal Boots",
+  "item.avaritia_expand.blaze_helmet": "Blaze Helmet",
+  "item.avaritia_expand.blaze_chestplate": "Blaze Chestplate",
+  "item.avaritia_expand.blaze_leggings": "Blaze Leggings",
+  "item.avaritia_expand.blaze_boots": "Blaze Boots"
 }

@@ -1,15 +1,21 @@
 package com.cu6.avaritia_expand.item;
 
 import com.cu6.avaritia_expand.AvaritiaExpand;
+import committee.nova.mods.avaritia.Avaritia;
+import committee.nova.mods.avaritia.init.registry.ModBlocks;
+import committee.nova.mods.avaritia.init.registry.ModItems;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
 
 import java.util.function.Supplier;
-
 public enum ModArmorMaterials implements ArmorMaterial {
-    ;
+    CRYSTAL_MATRIX("crystal_matrix",8888,new int[]{58,60,58,56},25,
+            SoundEvents.ARMOR_EQUIP_GOLD,1f,0.5f,()->Ingredient.of(ModBlocks.crystal_matrix.get())),
+    BLAZE_CUBE("blaze_cube",7777,new int[]{32,35,32,30},25,
+            SoundEvents.ARMOR_EQUIP_GOLD,10f,0.1f,()->Ingredient.of(ModItems.blaze_cube.get()));
 
     public  final String name;
     private final int durabilityMultiplier;
@@ -20,7 +26,7 @@ public enum ModArmorMaterials implements ArmorMaterial {
     private final float knockbackResistance;
     private final Supplier<Ingredient> repairIngredient;
 
-    private static final int[] BASE_DURABILITY = {11,16,16,13};
+    private static final int[] BASE_DURABILITY = {1,1,1,1};
 
     ModArmorMaterials(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantmenValue, SoundEvent equipSound, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
         this.name = name;

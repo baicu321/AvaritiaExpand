@@ -1,3 +1,12 @@
 {
-  "item.avaritia_expand.crystal_chestplate": "晶纹护佑之甲"
+  "creativetab.expand_tab": "无尽 : 拓展",
+  "item.avaritia_expand.crystal_helmet": "晶纹避矢头盔",
+  "item.avaritia_expand.crystal_chestplate": "晶纹护佑胸甲",
+  "item.avaritia_expand.crystal_leggings": "晶纹裹胫护腿",
+  "item.avaritia_expand.crystal_boots": "晶纹减坠双靴",
+  "item.avaritia_expand.blaze_helmet": "Blaze Helmet",
+  "item.avaritia_expand.blaze_chestplate": "Blaze Chestplate",
+  "item.avaritia_expand.blaze_leggings": "Blaze Leggings",
+  "item.avaritia_expand.blaze_boots": "Blaze Boots",
+  "item.avaritia_expand.blaze_shield": "Blaze Shield"
 }
