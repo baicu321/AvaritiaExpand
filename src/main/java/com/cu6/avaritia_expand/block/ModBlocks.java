@@ -1,6 +1,7 @@
 package com.cu6.avaritia_expand.block;
 
 import com.cu6.avaritia_expand.AvaritiaExpand;
+import com.cu6.avaritia_expand.block.custom.BlazeFurnaceBlock;
 import com.cu6.avaritia_expand.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -19,8 +20,8 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, AvaritiaExpand.MOD_ID);
 
 
-    public static final RegistryObject<Block> INFINITY_FURNACE = registerBlock("infinity_furnace",
-            ()->new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+    public static final RegistryObject<Block> BLAZE_FURNACE = registerBlock("blaze_furnace",
+            ()->new BlazeFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).noOcclusion()));
 
 
 
