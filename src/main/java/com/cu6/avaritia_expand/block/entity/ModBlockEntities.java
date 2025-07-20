@@ -19,6 +19,7 @@ public class ModBlockEntities {
                     BlockEntityType.Builder.of(BlazeFurnaceBlockEntity::new,
                             ModBlocks.BLAZE_FURNACE.get()).build(null));
 
+
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

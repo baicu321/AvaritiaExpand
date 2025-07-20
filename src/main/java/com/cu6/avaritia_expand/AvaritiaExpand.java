@@ -2,6 +2,8 @@ package com.cu6.avaritia_expand;
 
 import com.cu6.avaritia_expand.block.ModBlocks;
 import com.cu6.avaritia_expand.block.entity.ModBlockEntities;
+import com.cu6.avaritia_expand.block.renderer.InfinityTNTRenderer;
+import com.cu6.avaritia_expand.entity.ModEntities;
 import com.cu6.avaritia_expand.item.ModCreativeModTabs;
 import com.cu6.avaritia_expand.item.ModItemProperties;
 import com.cu6.avaritia_expand.item.ModItems;
@@ -9,8 +11,7 @@ import com.cu6.avaritia_expand.screen.BlazeFurnaceScreen;
 import com.cu6.avaritia_expand.screen.ModMenuTypes;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.client.renderer.item.ItemProperties;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -38,6 +39,7 @@ public class AvaritiaExpand {
         ModItems.register(modEventBus);
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
+        ModEntities.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -66,7 +68,6 @@ public class AvaritiaExpand {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             ModItemProperties.register(event);
-
             MenuScreens.register(ModMenuTypes.BLAZE_FURNACE_MENU.get(), BlazeFurnaceScreen::new);
         }
     }
