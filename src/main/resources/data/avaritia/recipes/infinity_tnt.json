@@ -1,0 +1,34 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "minecraft:gunpowder"
+    },
+    "B": {
+      "item": "minecraft:tnt"
+    },
+    "C": {
+      "item": "avaritia:infinity_ingot"
+    },
+    "D": {
+      "item": "avaritia:infinity_catalyst"
+    }
+  },
+  "pattern": [
+    "AAAAAAAAA",
+    "AC     CA",
+    "A C   C A",
+    "A  BBB  A",
+    "A  BDB  A",
+    "A  BBB  A",
+    "A C   C A",
+    "AC     CA",
+    "AAAAAAAAA"
+  ],
+  "result": {
+    "item": "avaritia_expand:infinity_tnt_block"
+  },
+  "show_notification": true,
+  "tier": 4
+}

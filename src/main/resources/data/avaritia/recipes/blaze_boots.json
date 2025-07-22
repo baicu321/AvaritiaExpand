@@ -1,0 +1,24 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "avaritia:blaze_cube"
+    },
+    "D": {
+      "item": "minecraft:blaze_powder"
+    }
+  },
+  "pattern": [
+    "     ",
+    "     ",
+    " C C ",
+    "DC CD",
+    "DD DD"
+  ],
+  "result": {
+    "item": "avaritia_expand:blaze_boots"
+  },
+  "show_notification": true,
+  "tier": 2
+}

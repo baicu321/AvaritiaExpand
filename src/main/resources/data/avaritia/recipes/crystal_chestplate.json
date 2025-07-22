@@ -1,0 +1,29 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "avaritia:crystal_matrix"
+    },
+    "B":{
+      "item": "minecraft:nether_star"
+    },
+    "C": {
+      "item": "avaritia:crystal_matrix_ingot"
+    }
+  },
+  "pattern": [
+    "       ",
+    "CBC CBC",
+    "CAAAAAC",
+    "CAABAAC",
+    " AAAAA ",
+    "  AAA  ",
+    "       "
+  ],
+  "result": {
+    "item": "avaritia_expand:crystal_chestplate"
+  },
+  "show_notification": true,
+  "tier": 3
+}

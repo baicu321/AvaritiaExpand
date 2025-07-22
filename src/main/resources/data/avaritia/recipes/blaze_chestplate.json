@@ -1,0 +1,27 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "minecraft:bone_block"
+    },
+    "C": {
+      "item": "avaritia:blaze_cube"
+    },
+    "D": {
+      "item": "minecraft:blaze_powder"
+    }
+  },
+  "pattern": [
+    "DD DD",
+    "DCCCD",
+    "DCACD",
+    " CCC ",
+    " CCC "
+  ],
+  "result": {
+    "item": "avaritia_expand:blaze_chestplate"
+  },
+  "show_notification": true,
+  "tier": 2
+}

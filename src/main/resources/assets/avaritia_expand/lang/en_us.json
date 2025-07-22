@@ -9,5 +9,7 @@
   "item.avaritia_expand.blaze_leggings": "Blaze Leggings",
   "item.avaritia_expand.blaze_boots": "Blaze Boots",
   "item.avaritia_expand.blaze_shield": "Blaze Shield",
-  "item.avaritia_expand.infinity_fishing_rod": "Infinity Fishing Rod"
+  "item.avaritia_expand.infinity_fishing_rod": "Infinity Fishing Rod",
+  "block.avaritia_expand.blaze_furnace": "Blaze Furnace",
+  "block.avaritia_expand.infinity_tnt_block":"Infinity TNT"
 }

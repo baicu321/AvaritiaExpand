@@ -1,0 +1,25 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "misc",
+  "key": {
+    "a": {
+      "item": "minecraft:blaze_powder"
+    },
+    "b": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "c": {
+      "item": "minecraft:fire_charge"
+    }
+  },
+  "pattern": [
+    "bbb",
+    "aca",
+    "bbb"
+  ],
+  "result": {
+    "item": "avaritia_expand:blaze_furnace"
+  },
+  "show_notification": true,
+  "tier": 1
+}
