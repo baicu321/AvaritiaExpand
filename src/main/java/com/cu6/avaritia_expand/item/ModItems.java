@@ -13,7 +13,6 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import static committee.nova.mods.avaritia.init.registry.ModItems.item;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -42,6 +41,17 @@ public class ModItems {
 //Infinity_tools
     public static final RegistryObject<Item> INFINITY_FISHINGROD = ITEMS.register("infinity_fishing_rod",
         ()-> new InfinityFishingRod(new Item.Properties().rarity(ModRarities.COSMIC).durability(9999)));
+
+
+
+
+
+
+
+
+
+
+
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
     }

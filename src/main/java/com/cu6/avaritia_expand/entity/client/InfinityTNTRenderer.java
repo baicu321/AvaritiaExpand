@@ -10,6 +10,7 @@ import net.minecraft.client.renderer.block.BlockRenderDispatcher;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.TntMinecartRenderer;
+import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 
@@ -23,10 +24,6 @@ public class InfinityTNTRenderer extends EntityRenderer<InfinityTNTEntity> {
         this.blockRenderer = pContext.getBlockRenderDispatcher();
     }
 
-    @Override
-    public ResourceLocation getTextureLocation(InfinityTNTEntity entity) {
-            return new ResourceLocation(AvaritiaExpand.MOD_ID, "textures/entity/infinity_tnt_entity.png");
-    }
 
     public void render(InfinityTNTEntity pEntity, float pEntityYaw, float pPartialTicks, PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight) {
         pPoseStack.pushPose();
@@ -46,6 +43,12 @@ public class InfinityTNTRenderer extends EntityRenderer<InfinityTNTEntity> {
         pPoseStack.mulPose(Axis.YP.rotationDegrees(90.0F));
         TntMinecartRenderer.renderWhiteSolidBlock(this.blockRenderer, ModBlocks.INFINITY_TNT.get().defaultBlockState(), pPoseStack, pBuffer, pPackedLight, $$6 / 5 % 2 == 0);
         pPoseStack.popPose();
-        super.render((InfinityTNTEntity) pEntity, pEntityYaw, pPartialTicks, pPoseStack, pBuffer, pPackedLight);
+        super.render(pEntity, pEntityYaw, pPartialTicks, pPoseStack, pBuffer, pPackedLight);
     }
+
+    @Override
+    public ResourceLocation getTextureLocation(InfinityTNTEntity entity) {
+        return TextureAtlas.LOCATION_BLOCKS;
+    }
+
 }

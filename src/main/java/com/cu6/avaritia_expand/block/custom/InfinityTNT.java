@@ -29,7 +29,7 @@ public class InfinityTNT extends Block {
         if (player.getItemInHand(hand).getItem() == net.minecraft.world.item.Items.FLINT_AND_STEEL) {
             ignite(level, pos, player);
             // 消耗打火石耐久
-            player.getItemInHand(hand).hurtAndBreak(1, player, (p) -> p.broadcastBreakEvent(hand));
+            player.getItemInHand(hand).hurtAndBreak(64, player, (p) -> p.broadcastBreakEvent(hand));
             return InteractionResult.sidedSuccess(level.isClientSide);
         }
         return super.use(state, level, pos, player, hand, hit);
