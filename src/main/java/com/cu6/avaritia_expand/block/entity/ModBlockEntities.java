@@ -2,8 +2,6 @@ package com.cu6.avaritia_expand.block.entity;
 
 import com.cu6.avaritia_expand.AvaritiaExpand;
 import com.cu6.avaritia_expand.block.ModBlocks;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;

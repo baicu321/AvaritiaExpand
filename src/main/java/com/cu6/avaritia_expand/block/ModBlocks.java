@@ -27,7 +27,7 @@ public class ModBlocks {
             ()-> new BlazeFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).lightLevel(value -> 11).noOcclusion()));
 
     public static final RegistryObject<Block> INFINITY_TNT = registerBlock("infinity_tnt",
-            ()-> new InfinityTNT(BlockBehaviour.Properties.copy(Blocks.TNT).lightLevel(value -> 18).noOcclusion()));
+            ()-> new InfinityTNT(BlockBehaviour.Properties.copy(Blocks.TNT).lightLevel(value -> 15).noOcclusion()));
 
 
 

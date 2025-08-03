@@ -1,17 +1,17 @@
-package com.cu6.avaritia_expand.entity;
+package com.cu6.avaritia_expand.entity.custom;
 
+import com.cu6.avaritia_expand.entity.ModEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.PrimedTnt;
-import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.network.PlayMessages;
 
 public class InfinityTNTEntity extends PrimedTnt {
     private int explosionRadius = 30;
-    private static final float EXPLOSION_RADIUS = 50.0F;
+    private static final float EXPLOSION_RADIUS = 100.0F;
 
     public InfinityTNTEntity(EntityType<? extends PrimedTnt> type, Level level) {
         super(type, level);
@@ -63,5 +63,9 @@ public class InfinityTNTEntity extends PrimedTnt {
 
     public void setExplosionRadius(int radius) {
         this.explosionRadius = radius;
+    }
+
+    public float getBrightness(float partialTicks) {
+        return partialTicks;
     }
 }

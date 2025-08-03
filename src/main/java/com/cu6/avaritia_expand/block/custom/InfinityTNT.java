@@ -1,6 +1,6 @@
 package com.cu6.avaritia_expand.block.custom;
 
-import com.cu6.avaritia_expand.entity.InfinityTNTEntity;
+import com.cu6.avaritia_expand.entity.custom.InfinityTNTEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
