@@ -129,34 +129,74 @@ public class BlazeFurnaceBlockEntity extends BlockEntity implements MenuProvider
         if (pLevel.isClientSide()) return;
 
         boolean changed = false;
+        boolean hasValidItem = false;
 
-        // 检查所有输入槽是否有物品
+        // 先检查是否有任何可烧制物品
         for (int slot : INPUT_SLOT) {
             ItemStack stack = itemHandler.getStackInSlot(slot);
-            if (!stack.isEmpty()) {
-                if (hasRecipe(stack)) { // 检查当前物品是否有配方
-                    increaseCraftingProgress();
-                    changed = true;
-
-                    if (hasProgressFinished()) {
-                        craftItem();
-                        resetProgress();
-                        changed = true;
-                    }
-                    break; // 找到有效配方就处理
-                }
+            if (!stack.isEmpty() && hasRecipe(stack)) {
+                hasValidItem = true;
+                break;
             }
         }
 
-        // 如果没有找到有效配方，重置进度
-        if (!changed && progress > 0) {
+        // 如果有可烧制物品，继续处理进度
+        if (hasValidItem) {
+            increaseCraftingProgress();
+            changed = true;
+
+            if (hasProgressFinished()) {
+                // 寻找第一个可烧制的物品进行烧制
+                for (int slot : INPUT_SLOT) {
+                    ItemStack stack = itemHandler.getStackInSlot(slot);
+                    if (!stack.isEmpty() && hasRecipe(stack)) {
+                        // 烧制当前物品
+                        craftSpecificItem(slot);
+                        resetProgress();
+                        changed = true;
+                        break; // 只处理一个物品
+                    }
+                }
+            }
+        } else if (progress > 0) {
+            // 没有可烧制物品时重置进度
             resetProgress();
             changed = true;
         }
 
         if (changed) {
             setChanged();
-            pLevel.sendBlockUpdated(pPos, pState, pState, 3); // 同步到客户端
+            pLevel.sendBlockUpdated(pPos, pState, pState, 3);
+        }
+    }
+
+    private void craftSpecificItem(int inputSlot) {
+        ItemStack inputStack = itemHandler.getStackInSlot(inputSlot);
+        if (inputStack.isEmpty()) return;
+
+        // 查找该物品的配方
+        SimpleContainer inventory = new SimpleContainer(1);
+        inventory.setItem(0, inputStack);
+        Optional<SmeltingRecipe> recipe = level.getRecipeManager()
+                .getRecipeFor(RecipeType.SMELTING, inventory, level);
+
+        if (recipe.isPresent()) {
+            // 消耗指定槽位的输入物品
+            inputStack.shrink(1);
+
+            // 获取配方结果
+            ItemStack result = recipe.get().getResultItem(level.registryAccess()).copy();
+
+            // 输出到可用槽位
+            int outputSlot = findAvailableOutputSlot(result);
+            if (outputSlot >= 0) {
+                ItemStack currentOutput = itemHandler.getStackInSlot(outputSlot);
+                if (currentOutput.isEmpty()) {
+                    itemHandler.setStackInSlot(outputSlot, result);
+                } else if (ItemStack.isSameItemSameTags(currentOutput, result)) {
+                    currentOutput.grow(result.getCount());
+                }
+            }
         }
     }
 
@@ -226,6 +266,8 @@ public class BlazeFurnaceBlockEntity extends BlockEntity implements MenuProvider
     private void increaseCraftingProgress() {
         progress++;
     }
+
+
 
     private boolean hasRecipe(ItemStack inputStack) {
         SimpleContainer inventory = new SimpleContainer(1);

@@ -11,16 +11,17 @@ import net.minecraft.world.entity.player.Inventory;
 
 public class BlazeFurnaceScreen extends AbstractContainerScreen<BlazeFurnaceMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(AvaritiaExpand.MOD_ID,"textures/gui/blaze_furnace_gui.png");
+                new ResourceLocation(AvaritiaExpand.MOD_ID,"textures/gui/blaze_furnace_gui.png");
     public BlazeFurnaceScreen(BlazeFurnaceMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
-        super(pMenu, pPlayerInventory, pTitle);
+        super(pMenu, pPlayerInventory, Component.translatable("title.avaritia_expand.blaze_furnace"));
     }
 
     @Override
     protected void init() {
         super.init();
         this.inventoryLabelY = 100000;
-        this.titleLabelX = 100000;
+        this.titleLabelX = 10;
+        this.titleLabelY = 73;
     }
 
     @Override
@@ -37,7 +38,7 @@ public class BlazeFurnaceScreen extends AbstractContainerScreen<BlazeFurnaceMenu
 
     private void renderProgressArrow(GuiGraphics guiGraphics, int x, int y) {
         if (menu.isCrafing()){
-            guiGraphics.blit(TEXTURE,x+79,y-100,176,0,menu.getScaledProgress(),16);
+            guiGraphics.blit(TEXTURE,x+75,y-94,176,0,menu.getScaledProgress(),16);
         }
     }
 

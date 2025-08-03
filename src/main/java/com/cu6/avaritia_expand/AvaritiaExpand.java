@@ -2,7 +2,6 @@ package com.cu6.avaritia_expand;
 
 import com.cu6.avaritia_expand.block.ModBlocks;
 import com.cu6.avaritia_expand.block.entity.ModBlockEntities;
-import com.cu6.avaritia_expand.block.renderer.InfinityTNTRenderer;
 import com.cu6.avaritia_expand.entity.ModEntities;
 import com.cu6.avaritia_expand.item.ModCreativeModTabs;
 import com.cu6.avaritia_expand.item.ModItemProperties;
@@ -11,7 +10,6 @@ import com.cu6.avaritia_expand.screen.BlazeFurnaceScreen;
 import com.cu6.avaritia_expand.screen.ModMenuTypes;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;

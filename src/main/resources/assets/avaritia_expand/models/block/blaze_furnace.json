@@ -1,6 +1,8 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/orientable",
   "textures": {
-      "all": "avaritia:block/resource/blaze_cube_block"
+    "front": "avaritia_expand:block/blaze_furnace_front",
+    "side": "avaritia_expand:block/blaze_furnace_side",
+    "top": "avaritia_expand:block/blaze_furnace_top"
   }
 }

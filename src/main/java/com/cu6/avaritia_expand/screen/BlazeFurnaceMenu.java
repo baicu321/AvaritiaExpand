@@ -42,14 +42,10 @@ public class BlazeFurnaceMenu extends AbstractContainerMenu {
                     }
                 });
             }
-//            this.addSlot(new SlotItemHandler(iItemHandler,0,114,27));
-//            this.addSlot(new SlotItemHandler(iItemHandler,1,132,27));
-//            this.addSlot(new SlotItemHandler(iItemHandler,2,114,45));
-//            this.addSlot(new SlotItemHandler(iItemHandler,3,132,45));
-            this.addSlot(new SlotItemHandler(iItemHandler,4,34,27));
-            this.addSlot(new SlotItemHandler(iItemHandler,5,52,27));
-            this.addSlot(new SlotItemHandler(iItemHandler,6,34,45));
-            this.addSlot(new SlotItemHandler(iItemHandler,7,52,45));
+            this.addSlot(new SlotItemHandler(iItemHandler,4,33,28));
+            this.addSlot(new SlotItemHandler(iItemHandler,5,51,28));
+            this.addSlot(new SlotItemHandler(iItemHandler,6,33,46));
+            this.addSlot(new SlotItemHandler(iItemHandler,7,51,46));
 
 
         });
@@ -76,8 +72,8 @@ public class BlazeFurnaceMenu extends AbstractContainerMenu {
     private static final int VANILLA_FIRST_SLOT_INDEX = 0;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
-    // THIS YOU HAVE TO DEFINE!
-    private static final int TE_INVENTORY_SLOT_COUNT = 8;  // must be the number of slots you have!
+
+    private static final int TE_INVENTORY_SLOT_COUNT = 8;
     @Override
     public ItemStack quickMoveStack(Player playerIn, int pIndex) {
         Slot sourceSlot = slots.get(pIndex);
@@ -119,13 +115,13 @@ public class BlazeFurnaceMenu extends AbstractContainerMenu {
     private void addPlayerInventory(Inventory playerInventory){
         for (int i = 0 ; i < 3;++i){
             for (int l = 0; l < 9 ; ++l){
-                this.addSlot(new Slot(playerInventory,l + i * 9 + 9,8 + l * 18,84 + i * 18));
+                this.addSlot(new Slot(playerInventory,l + i * 9 + 9,8 + l * 18,85 + i * 18));
             }
         }
     }
     private void addPlayerHotbar(Inventory playerInventory){
         for (int i = 0 ; i < 9; ++i){
-            this.addSlot(new Slot(playerInventory,i,8 + i * 18,142));
+            this.addSlot(new Slot(playerInventory,i,8 + i * 18,143));
         }
     }
 }

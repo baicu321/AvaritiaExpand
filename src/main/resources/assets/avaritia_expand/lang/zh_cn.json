@@ -4,12 +4,13 @@
   "item.avaritia_expand.crystal_chestplate": "晶纹护佑胸甲",
   "item.avaritia_expand.crystal_leggings": "晶纹裹胫护腿",
   "item.avaritia_expand.crystal_boots": "晶纹减坠双靴",
-  "item.avaritia_expand.blaze_helmet": "炽骨面罩",
-  "item.avaritia_expand.blaze_chestplate": "炽骨胸甲",
-  "item.avaritia_expand.blaze_leggings": "炽骨护腿",
-  "item.avaritia_expand.blaze_boots": "炽骨靴子",
+  "item.avaritia_expand.blaze_helmet": "炽骸之焚颅冠盔",
+  "item.avaritia_expand.blaze_chestplate": "炽烬之熔心铠胄",
+  "item.avaritia_expand.blaze_leggings": "炽渊之断岳胫甲",
+  "item.avaritia_expand.blaze_boots": "炽陨之裂地战履",
   "item.avaritia_expand.blaze_shield": "炽守之防焰盾",
   "item.avaritia_expand.infinity_fishing_rod": "双界捕狩钓杆",
   "block.avaritia_expand.blaze_furnace": "§b炽骨熔炉",
+  "title.avaritia_expand.blaze_furnace": "炽骨熔炉",
   "block.avaritia_expand.infinity_tnt_block":"§c无尽TNT"
 }

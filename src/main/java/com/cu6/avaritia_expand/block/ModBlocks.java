@@ -2,16 +2,12 @@ package com.cu6.avaritia_expand.block;
 
 import com.cu6.avaritia_expand.AvaritiaExpand;
 import com.cu6.avaritia_expand.block.custom.BlazeFurnaceBlock;
-import com.cu6.avaritia_expand.block.custom.InfinityTNTBlock;
+import com.cu6.avaritia_expand.block.custom.InfinityTNT;
 import com.cu6.avaritia_expand.item.ModItems;
-import committee.nova.mods.avaritia.common.block.ResourceBlock;
-import committee.nova.mods.avaritia.init.registry.ModRarities;
-import committee.nova.mods.avaritia.init.registry.ModResourceBlocks;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.TntBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -25,10 +21,16 @@ import static committee.nova.mods.avaritia.init.registry.ModBlocks.itemBlock;
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, AvaritiaExpand.MOD_ID);
+
+
     public static final RegistryObject<Block> BLAZE_FURNACE = registerBlock("blaze_furnace",
-            ()-> new BlazeFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).noOcclusion()));
-    public static final RegistryObject<Block> INFINITY_TNT = registerBlock("infinity_tnt_block",
-            ()-> new InfinityTNTBlock(BlockBehaviour.Properties.copy(Blocks.TNT).noOcclusion()));
+            ()-> new BlazeFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).lightLevel(value -> 11).noOcclusion()));
+
+    public static final RegistryObject<Block> INFINITY_TNT = registerBlock("infinity_tnt",
+            ()-> new InfinityTNT(BlockBehaviour.Properties.copy(Blocks.TNT).lightLevel(value -> 18).noOcclusion()));
+
+
+
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name,block);
