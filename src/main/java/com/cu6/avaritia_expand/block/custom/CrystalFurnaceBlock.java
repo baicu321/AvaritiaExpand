@@ -1,7 +1,7 @@
 package com.cu6.avaritia_expand.block.custom;
 
 
-import com.cu6.avaritia_expand.block.entity.BlazeFurnaceBlockEntity;
+import com.cu6.avaritia_expand.block.entity.CrystalFurnaceBlockEntity;
 import com.cu6.avaritia_expand.block.entity.ModBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -27,10 +27,10 @@ import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.Nullable;
 
 
-public class BlazeFurnaceBlock extends BaseEntityBlock {
+public class CrystalFurnaceBlock extends BaseEntityBlock {
     private static final DirectionProperty FACING;
     public static final VoxelShape SHAPE = Block.box(0,0,0,16,16,16);
-    public BlazeFurnaceBlock(Properties pProperties) {
+    public CrystalFurnaceBlock(Properties pProperties) {
         super(pProperties);
     }
 
@@ -55,8 +55,8 @@ public class BlazeFurnaceBlock extends BaseEntityBlock {
     public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pMovedByPiston) {
         if (pState.getBlock() != pNewState.getBlock()){
             BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
-            if (blockEntity instanceof BlazeFurnaceBlockEntity){
-                ((BlazeFurnaceBlockEntity) blockEntity).drops();
+            if (blockEntity instanceof CrystalFurnaceBlockEntity){
+                ((CrystalFurnaceBlockEntity) blockEntity).drops();
             }
         }
         super.onRemove(pState, pLevel, pPos, pNewState, pMovedByPiston);
@@ -65,8 +65,8 @@ public class BlazeFurnaceBlock extends BaseEntityBlock {
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if (!pLevel.isClientSide()){
             BlockEntity entity = pLevel.getBlockEntity(pPos);
-            if (entity instanceof BlazeFurnaceBlockEntity){
-                NetworkHooks.openScreen(((ServerPlayer) pPlayer),(BlazeFurnaceBlockEntity)entity,pPos);
+            if (entity instanceof CrystalFurnaceBlockEntity){
+                NetworkHooks.openScreen(((ServerPlayer) pPlayer),(CrystalFurnaceBlockEntity)entity,pPos);
             }else {
                 throw new IllegalStateException("");
             }
@@ -76,7 +76,7 @@ public class BlazeFurnaceBlock extends BaseEntityBlock {
 
     @Override
     public @Nullable BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
-        return new BlazeFurnaceBlockEntity(pPos,pState);
+        return new CrystalFurnaceBlockEntity(pPos,pState);
     }
 
     @Nullable
@@ -88,10 +88,10 @@ public class BlazeFurnaceBlock extends BaseEntityBlock {
 
         return createTickerHelper(
                 pBlockEntityType,
-                ModBlockEntities.BLAZE_FURNACE_BE.get(),
+                ModBlockEntities.CRYSTAL_FURNACE_CE.get(),
                 (level, blockPos, blockState, blockEntity) -> {
-                    if (blockEntity instanceof BlazeFurnaceBlockEntity) {
-                        ((BlazeFurnaceBlockEntity) blockEntity).tick(level, blockPos, blockState);
+                    if (blockEntity instanceof CrystalFurnaceBlockEntity) {
+                        ((CrystalFurnaceBlockEntity) blockEntity).tick(level, blockPos, blockState);
                     }
                 }
         );

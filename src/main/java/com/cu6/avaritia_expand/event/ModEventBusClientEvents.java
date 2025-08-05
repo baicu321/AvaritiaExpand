@@ -13,7 +13,6 @@ import net.minecraftforge.fml.common.Mod;
 public class ModEventBusClientEvents {
 @SubscribeEvent
     public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event){
-
         event.registerLayerDefinition(ModModelLayers.INFINITY_TNT_LAYER, InfinityTNTModel::createBodyLayer);
 
     }

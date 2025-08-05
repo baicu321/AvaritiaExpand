@@ -8,11 +8,11 @@ import com.cu6.avaritia_expand.item.ModCreativeModTabs;
 import com.cu6.avaritia_expand.item.ModItemProperties;
 import com.cu6.avaritia_expand.item.ModItems;
 import com.cu6.avaritia_expand.screen.BlazeFurnaceScreen;
+import com.cu6.avaritia_expand.screen.CrystalFurnaceScreen;
 import com.cu6.avaritia_expand.screen.ModMenuTypes;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.client.renderer.entity.EntityRenderer;
-import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.*;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -23,12 +23,13 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.loading.FMLPaths;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(AvaritiaExpand.MOD_ID)
 public class AvaritiaExpand {
-
+//666啊,这个入代码全是ai写的
     public static final String MOD_ID = "avaritia_expand";
 
     private static final Logger LOGGER = LogUtils.getLogger();
@@ -36,6 +37,7 @@ public class AvaritiaExpand {
     public AvaritiaExpand(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
         ModCreativeModTabs.register(modEventBus);
+        ModConfig.loadConfig(ModConfig.SPEC, FMLPaths.CONFIGDIR.get().resolve(MOD_ID + ".toml"));
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlockEntities.register(modEventBus);
@@ -66,11 +68,15 @@ public class AvaritiaExpand {
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
+
         @SubscribeEvent
+
         public static void onClientSetup(FMLClientSetupEvent event) {
             ModItemProperties.register(event);
             MenuScreens.register(ModMenuTypes.BLAZE_FURNACE_MENU.get(), BlazeFurnaceScreen::new);
-            EntityRenderers.register(ModEntities.INFINTITY_TNT_ENTITY.get(),InfinityTNTRenderer::new);
+            MenuScreens.register(ModMenuTypes.CRYSTAL_FURNACE_MENU.get(), CrystalFurnaceScreen::new);
+            EntityRenderers.register(ModEntities.INFINTITY_TNT_ENTITY.get(), InfinityTNTRenderer::new);
         }
     }
 }
+

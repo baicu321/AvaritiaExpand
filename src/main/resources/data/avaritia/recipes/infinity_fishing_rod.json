@@ -1,34 +1,23 @@
 {
-  "type": "avaritia:shaped_table",
-  "category": "equipment",
-  "key": {
-    "C": {
-      "item": "avaritia:crystal_matrix_ingot"
+  "type": "avaritia:extreme_smithing",
+  "addition": [
+    {
+      "item": "avaritia:neutron_gear"
     },
-    "I": {
-      "item": "avaritia:infinity_ingot"
+    {
+      "item": "minecraft:heart_of_the_sea"
     },
-    "N": {
-      "item": "avaritia:neutron_ingot"
-    },
-    "X": {
-      "item": "avaritia:infinity_catalyst"
+    {
+      "item": "avaritia:enhancement_core"
     }
-  },
-  "pattern": [
-    "        X",
-    "       NC",
-    "      N C",
-    "     N  C",
-    "    N   C",
-    "   N    C",
-    "  N     C",
-    " N      C",
-    "N       I"
   ],
+  "base": {
+    "item": "minecraft:fishing_rod"
+  },
   "result": {
     "item": "avaritia_expand:infinity_fishing_rod"
   },
-  "show_notification": true,
-  "tier": 4
+  "template": {
+    "item": "avaritia:upgrade_smithing_template"
+  }
 }

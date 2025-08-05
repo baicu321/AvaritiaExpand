@@ -17,9 +17,12 @@ public class ModMenuTypes {
     private static <T extends AbstractContainerMenu>RegistryObject<MenuType<T>> registerMenuType(String name, IContainerFactory<T> factory){
         return MENUS.register(name,()-> IForgeMenuType.create(factory));
     }
+
+
     public static final RegistryObject<MenuType<BlazeFurnaceMenu>> BLAZE_FURNACE_MENU =
             registerMenuType("blaze_furnace_menu",BlazeFurnaceMenu::new);
-
+    public static final RegistryObject<MenuType<CrystalFurnaceMenu>> CRYSTAL_FURNACE_MENU =
+            registerMenuType("crystal_furnace_menu",CrystalFurnaceMenu::new);
     public static void register(IEventBus eventBus){
         MENUS.register(eventBus);
     }

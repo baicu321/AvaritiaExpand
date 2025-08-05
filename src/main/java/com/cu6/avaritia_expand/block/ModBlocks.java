@@ -2,6 +2,7 @@ package com.cu6.avaritia_expand.block;
 
 import com.cu6.avaritia_expand.AvaritiaExpand;
 import com.cu6.avaritia_expand.block.custom.BlazeFurnaceBlock;
+import com.cu6.avaritia_expand.block.custom.CrystalFurnaceBlock;
 import com.cu6.avaritia_expand.block.custom.InfinityTNT;
 import com.cu6.avaritia_expand.item.ModItems;
 import net.minecraft.world.item.BlockItem;
@@ -25,7 +26,8 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> BLAZE_FURNACE = registerBlock("blaze_furnace",
             ()-> new BlazeFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).lightLevel(value -> 11).noOcclusion()));
-
+    public static final RegistryObject<Block> CRYSTAL_FURNACE = registerBlock("crystal_furnace",
+            ()-> new CrystalFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).lightLevel(value -> 11).noOcclusion()));
     public static final RegistryObject<Block> INFINITY_TNT = registerBlock("infinity_tnt",
             ()-> new InfinityTNT(BlockBehaviour.Properties.copy(Blocks.TNT).lightLevel(value -> 15).noOcclusion()));
 

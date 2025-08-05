@@ -16,7 +16,10 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("blaze_furnace_be", ()->
                     BlockEntityType.Builder.of(BlazeFurnaceBlockEntity::new,
                             ModBlocks.BLAZE_FURNACE.get()).build(null));
-
+    public static final RegistryObject<BlockEntityType<CrystalFurnaceBlockEntity>> CRYSTAL_FURNACE_CE =
+            BLOCK_ENTITIES.register("crystal_furnace_be", ()->
+                    BlockEntityType.Builder.of(CrystalFurnaceBlockEntity::new,
+                            ModBlocks.CRYSTAL_FURNACE.get()).build(null));
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

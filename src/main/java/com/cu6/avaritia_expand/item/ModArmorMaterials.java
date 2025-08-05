@@ -13,9 +13,9 @@ import net.minecraft.world.item.crafting.Ingredient;
 import java.util.function.Supplier;
 public enum ModArmorMaterials implements ArmorMaterial {
     CRYSTAL_MATRIX("crystal_matrix",8888,new int[]{58,60,58,56},25,
-            SoundEvents.ARMOR_EQUIP_GOLD,1f,0.5f,()->Ingredient.of(ModBlocks.crystal_matrix.get())),
+            SoundEvents.ARMOR_EQUIP_GOLD,5f,0.5f,()->Ingredient.of(ModBlocks.crystal_matrix.get())),
     BLAZE_CUBE("blaze_cube",7777,new int[]{32,35,32,30},25,
-            SoundEvents.ARMOR_EQUIP_GOLD,10f,0.1f,()->Ingredient.of(ModItems.blaze_cube.get()));
+            SoundEvents.ARMOR_EQUIP_GOLD,3f,0.1f,()->Ingredient.of(ModItems.blaze_cube.get()));
 
     public  final String name;
     private final int durabilityMultiplier;
