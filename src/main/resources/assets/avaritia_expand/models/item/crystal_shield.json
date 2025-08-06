@@ -107,20 +107,20 @@
 	],
 	"display": {
 		"thirdperson_righthand": {
-			"rotation": [16.46, -89.25, 22.28],
-			"translation": [3, -14.75, 6]
+			"rotation": [-14.79, -88.68, -16.8],
+			"translation": [3, -14.75, 4.75]
 		},
 		"thirdperson_lefthand": {
-			"rotation": [16.46, -89.25, 22.28],
-			"translation": [3, -14.75, 6]
+			"rotation": [-14.79, -88.68, -16.8],
+			"translation": [3, -14.75, 4.75]
 		},
 		"firstperson_righthand": {
 			"rotation": [0, 0, -5],
-			"translation": [-2.5, -17, 0]
+			"translation": [-2.25, -16, 0]
 		},
 		"firstperson_lefthand": {
 			"rotation": [0, 0, -5],
-			"translation": [-2.5, -17, 0]
+			"translation": [-2.25, -16, 0]
 		},
 		"ground": {
 			"scale": [0.5, 0.5, 0.5]
@@ -135,20 +135,20 @@
 			"scale": [0.5, 0.5, 0.5]
 		}
 	},
-	"overrides": [
-		{
-			"predicate": {
-				"blocking": 1
-			},
-			"model": "avaritia_expand:item/crystal_shield_blocking"
-		}
-	],
 	"groups": [
 		{
 			"name": "shield",
 			"origin": [7, 15.5, 11],
 			"color": 0,
 			"children": [0, 1, 2, 3, 4, 5, 6]
+		}
+	],
+	"overrides": [
+		{
+			"predicate": {
+				"blocking": 1
+			},
+			"model": "avaritia_expand:item/crystal_shield_blocking"
 		}
 	]
 }

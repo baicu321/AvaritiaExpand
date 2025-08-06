@@ -14,7 +14,8 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 
-import java.util.Iterator;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Mod.EventBusSubscriber(modid = AvaritiaExpand.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
@@ -42,23 +43,17 @@ public class CrystalChestplateEvent {
         }
     }
 
-    private static void clearNegativeEffects(Player player) {
 
-        Iterator<MobEffectInstance> iterator = player.getActiveEffects().iterator();
-        while (iterator.hasNext()) {
-            MobEffectInstance effect = iterator.next();
-            MobEffect potion = effect.getEffect();
+private static void clearNegativeEffects(Player player) {
 
-
-            if (!potion.isBeneficial()) {
-
-                iterator.remove();
-
-                player.removeEffect(potion);
-
-            }
+    List<MobEffectInstance> effects = new ArrayList<>(player.getActiveEffects());
+    for (MobEffectInstance effect : effects) {
+        MobEffect potion = effect.getEffect();
+        if (!potion.isBeneficial()) {
+            player.removeEffect(potion);
         }
     }
+}
 
     private static boolean isWearingCrystalChestplate(Player player) {
         ItemStack chestplate = player.getItemBySlot(EquipmentSlot.CHEST);

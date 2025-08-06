@@ -17,6 +17,7 @@ public class ModItemProperties {
             // 注册鱼竿的cast属性
             registerFishingRodCast(ModItems.INFINITY_FISHINGROD.get());
             registerShieldBlocking(ModItems.BLAZE_SHIELD.get());
+            registerShieldBlocking(ModItems.CRYSTAL_SHIELD.get());
             // 可以在这里添加其他物品的属性注册
             // registerBowPull(ModItems.YOUR_BOW.get());
         });

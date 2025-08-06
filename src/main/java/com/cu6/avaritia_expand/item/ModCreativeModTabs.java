@@ -20,15 +20,15 @@ public class ModCreativeModTabs {
                     .title(Component.translatable("creativetab.expand_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
                         //item
-                        output.accept(com.cu6.avaritia_expand.item.ModItems.CRYSTAL_HELMET.get());
-                        output.accept(com.cu6.avaritia_expand.item.ModItems.CRYSTAL_CHESTPLATE.get());
-                        output.accept(com.cu6.avaritia_expand.item.ModItems.CRYSTAL_LEGGINGS.get());
-                        output.accept(com.cu6.avaritia_expand.item.ModItems.CRYSTAL_BOOTS.get());
                         output.accept(com.cu6.avaritia_expand.item.ModItems.BLAZE_HELMET.get());
                         output.accept(com.cu6.avaritia_expand.item.ModItems.BLAZE_CHESTPLATE.get());
                         output.accept(com.cu6.avaritia_expand.item.ModItems.BLAZE_LEGGINGS.get());
                         output.accept(com.cu6.avaritia_expand.item.ModItems.BLAZE_BOOTS.get());
                         output.accept(com.cu6.avaritia_expand.item.ModItems.BLAZE_SHIELD.get());
+                        output.accept(com.cu6.avaritia_expand.item.ModItems.CRYSTAL_HELMET.get());
+                        output.accept(com.cu6.avaritia_expand.item.ModItems.CRYSTAL_CHESTPLATE.get());
+                        output.accept(com.cu6.avaritia_expand.item.ModItems.CRYSTAL_LEGGINGS.get());
+                        output.accept(com.cu6.avaritia_expand.item.ModItems.CRYSTAL_BOOTS.get());
                         output.accept(com.cu6.avaritia_expand.item.ModItems.CRYSTAL_SHIELD.get());
                         output.accept(com.cu6.avaritia_expand.item.ModItems.INFINITY_FISHINGROD.get());
                         output.accept(com.cu6.avaritia_expand.item.ModItems.INFINITY_EXPERIENCE_BOTTLE.get());
