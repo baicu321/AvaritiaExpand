@@ -3,6 +3,7 @@ package com.cu6.avaritia_expand.item;
 import com.cu6.avaritia_expand.AvaritiaExpand;
 import com.cu6.avaritia_expand.item.armor.*;
 import com.cu6.avaritia_expand.item.shield.BlazeShieldItem;
+import com.cu6.avaritia_expand.item.shield.CrystalShieldItem;
 import com.cu6.avaritia_expand.item.tool.InfinityCrossBow;
 import com.cu6.avaritia_expand.item.tool.InfinityExperienceBottle;
 import com.cu6.avaritia_expand.item.tool.InfinityFishingRod;
@@ -42,6 +43,9 @@ public class ModItems {
 //blaze_cube tools
     public static final RegistryObject<Item> BLAZE_SHIELD = ITEMS.register("blaze_shield",
         ()-> new BlazeShieldItem(new Item.Properties().rarity(ModRarities.EPIC).durability(7777)));
+//crystal tools
+public static final RegistryObject<Item> CRYSTAL_SHIELD = ITEMS.register("crystal_shield",
+        ()-> new CrystalShieldItem(new Item.Properties().rarity(ModRarities.EPIC).durability(8888)));
 //Infinity_tools
     public static final RegistryObject<Item> INFINITY_FISHINGROD = ITEMS.register("infinity_fishing_rod",
         ()-> new InfinityFishingRod(new Item.Properties().rarity(ModRarities.COSMIC).durability(9999)));

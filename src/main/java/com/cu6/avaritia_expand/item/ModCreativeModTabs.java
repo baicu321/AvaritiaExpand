@@ -29,6 +29,7 @@ public class ModCreativeModTabs {
                         output.accept(com.cu6.avaritia_expand.item.ModItems.BLAZE_LEGGINGS.get());
                         output.accept(com.cu6.avaritia_expand.item.ModItems.BLAZE_BOOTS.get());
                         output.accept(com.cu6.avaritia_expand.item.ModItems.BLAZE_SHIELD.get());
+                        output.accept(com.cu6.avaritia_expand.item.ModItems.CRYSTAL_SHIELD.get());
                         output.accept(com.cu6.avaritia_expand.item.ModItems.INFINITY_FISHINGROD.get());
                         output.accept(com.cu6.avaritia_expand.item.ModItems.INFINITY_EXPERIENCE_BOTTLE.get());
                         //block
