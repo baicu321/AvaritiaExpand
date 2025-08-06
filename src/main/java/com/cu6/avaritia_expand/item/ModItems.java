@@ -53,7 +53,7 @@ public static final RegistryObject<Item> CRYSTAL_SHIELD = ITEMS.register("crysta
             ()-> new InfinityCrossBow(new Item.Properties().rarity(ModRarities.COSMIC).durability(9999)));
 //Infinity_Items
     public static final RegistryObject<Item> INFINITY_EXPERIENCE_BOTTLE = ITEMS.register("infinity_experience_bottle",
-        ()-> new InfinityExperienceBottle(new Item.Properties().rarity(ModRarities.COSMIC)));
+        ()-> new InfinityExperienceBottle(new Item.Properties().rarity(ModRarities.COSMIC).stacksTo(1)));
 
 
 
