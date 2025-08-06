@@ -1,0 +1,52 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "misc",
+  "key": {
+    "c": {
+      "item": "minecraft:iron_block"
+    },
+    "d": {
+      "item": "avaritia:diamond_lattice"
+    },
+    "f": {
+      "item": "minecraft:quartz_block"
+    },
+    "g": {
+      "item": "avaritia:neutron_gear"
+    },
+    "h": {
+      "item": "minecraft:redstone_block"
+    },
+    "i": {
+      "item": "avaritia:crystal_matrix_ingot"
+    },
+    "j": {
+      "item": "avaritia:neutron_ingot"
+    },
+    "k": {
+      "item": "avaritia:endest_pearl"
+    },
+    "l": {
+      "item": "avaritia_expand:blaze_furnace"
+    },
+    "m": {
+      "item": "avaritia:double_compressed_crafting_table"
+    }
+  },
+  "pattern": [
+    "ccfdddfcc",
+    "cg hhh gc",
+    "f g i g f",
+    "dh mkm hd",
+    "jhiklkihj",
+    "dh mkm hd",
+    "f g i g f",
+    "cg hhh gc",
+    "ccfdjdfcc"
+  ],
+  "result": {
+    "item": "avaritia_expand:crystal_furnace"
+  },
+  "show_notification": true,
+  "tier": 4
+}
