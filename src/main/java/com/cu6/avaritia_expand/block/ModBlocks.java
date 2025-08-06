@@ -17,8 +17,6 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Supplier;
 
-import static committee.nova.mods.avaritia.init.registry.ModBlocks.itemBlock;
-
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, AvaritiaExpand.MOD_ID);
@@ -27,7 +25,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> BLAZE_FURNACE = registerBlock("blaze_furnace",
             ()-> new BlazeFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).lightLevel(value -> 11).noOcclusion()));
     public static final RegistryObject<Block> CRYSTAL_FURNACE = registerBlock("crystal_furnace",
-            ()-> new CrystalFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).lightLevel(value -> 11).noOcclusion()));
+            ()-> new CrystalFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).lightLevel(value -> 8).noOcclusion()));
     public static final RegistryObject<Block> INFINITY_TNT = registerBlock("infinity_tnt",
             ()-> new InfinityTNT(BlockBehaviour.Properties.copy(Blocks.TNT).lightLevel(value -> 15).noOcclusion()));
 

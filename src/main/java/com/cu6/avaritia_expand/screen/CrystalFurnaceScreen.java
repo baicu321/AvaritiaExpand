@@ -11,17 +11,18 @@ import net.minecraft.world.entity.player.Inventory;
 
 public class CrystalFurnaceScreen extends AbstractContainerScreen<CrystalFurnaceMenu> {
     private static final ResourceLocation TEXTURE =
-                new ResourceLocation(AvaritiaExpand.MOD_ID,"textures/gui/crystal_furnace_gui.png");
+            new ResourceLocation(AvaritiaExpand.MOD_ID,"textures/gui/crystal_furnace_gui.png");
     public CrystalFurnaceScreen(CrystalFurnaceMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
-        super(pMenu, pPlayerInventory, Component.translatable("title.avaritia_expand.blaze_furnace"));
+        super(pMenu, pPlayerInventory, Component.translatable("title.avaritia_expand.crystal_furnace"));
     }
 
     @Override
     protected void init() {
         super.init();
-        this.inventoryLabelY = 100000;
-        this.titleLabelX = 10;
-        this.titleLabelY = 101;
+        this.inventoryLabelX = 12;
+        this.inventoryLabelY = 101;
+        this.titleLabelX = 6;
+        this.titleLabelY = -16;
     }
 
     @Override

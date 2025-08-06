@@ -1,0 +1,13 @@
+{
+  "render_type": "cutout",
+  "parent": "block/cube",
+  "textures": {
+    "north": "avaritia_expand:block/crystal_furnace_front",
+    "east": "avaritia_expand:block/crystal_furnace_front_left",
+    "south": "avaritia:block/machine/compressor/frame",
+    "west": "avaritia_expand:block/crystal_furnace_front_left",
+    "up": "avaritia_expand:block/crystal_furnace_top",
+    "down": "avaritia:block/machine/compressor/frame",
+    "particle": "avaritia:block/machine/compressor/top"
+  }
+}

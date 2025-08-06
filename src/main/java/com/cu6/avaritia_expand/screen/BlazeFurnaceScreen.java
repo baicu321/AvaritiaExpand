@@ -19,8 +19,8 @@ public class BlazeFurnaceScreen extends AbstractContainerScreen<BlazeFurnaceMenu
     @Override
     protected void init() {
         super.init();
-        this.inventoryLabelY = 100000;
-        this.titleLabelX = 10;
+        this.inventoryLabelY = 100000000;
+        this.titleLabelX = 7;
         this.titleLabelY = 73;
     }
 

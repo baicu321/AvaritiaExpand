@@ -2,24 +2,41 @@
   "type": "avaritia:shaped_table",
   "category": "misc",
   "key": {
-    "a": {
-      "item": "minecraft:blaze_powder"
-    },
-    "b": {
-      "item": "minecraft:netherite_ingot"
-    },
     "c": {
       "item": "avaritia:blaze_cube"
+    },
+    "d": {
+      "item": "minecraft:magma_block"
+    },
+    "f": {
+      "item": "minecraft:nether_brick"
+    },
+    "g": {
+      "item": "minecraft:wither_skeleton_skull"
+    },
+    "h": {
+      "item": "minecraft:netherite_scrap"
+    },
+    "i": {
+      "item": "minecraft:blaze_powder"
+    },
+    "j": {
+      "item": "avaritia:refined_coal"
+    },
+    "k": {
+      "item": "minecraft:blast_furnace"
     }
   },
   "pattern": [
-    "bbb",
-    "aca",
-    "bbb"
+    "chdhc",
+    "higih",
+    "dfkfd",
+    "hijih",
+    "chdhc"
   ],
   "result": {
     "item": "avaritia_expand:blaze_furnace"
   },
   "show_notification": true,
-  "tier": 1
+  "tier": 2
 }
