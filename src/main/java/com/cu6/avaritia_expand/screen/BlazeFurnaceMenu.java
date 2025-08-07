@@ -35,17 +35,17 @@ public class BlazeFurnaceMenu extends AbstractContainerMenu {
 
         this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(iItemHandler -> {
             for (int i = 0; i < 4; i++) {
-                this.addSlot(new SlotItemHandler(iItemHandler, i, 114 + (i % 2) * 18, 27 + (i / 2) * 18) {
+                this.addSlot(new SlotItemHandler(iItemHandler, i, 114 + (i % 2) * 18, 22 + (i / 2) * 18) {
                     @Override
                     public boolean mayPlace(ItemStack stack) {
                         return false; // 输出槽不能放入物品
                     }
                 });
             }
-            this.addSlot(new SlotItemHandler(iItemHandler,4,33,28));
-            this.addSlot(new SlotItemHandler(iItemHandler,5,51,28));
-            this.addSlot(new SlotItemHandler(iItemHandler,6,33,46));
-            this.addSlot(new SlotItemHandler(iItemHandler,7,51,46));
+            this.addSlot(new SlotItemHandler(iItemHandler,4,33,22));
+            this.addSlot(new SlotItemHandler(iItemHandler,5,51,22));
+            this.addSlot(new SlotItemHandler(iItemHandler,6,33,40));
+            this.addSlot(new SlotItemHandler(iItemHandler,7,51,40));
 
 
         });

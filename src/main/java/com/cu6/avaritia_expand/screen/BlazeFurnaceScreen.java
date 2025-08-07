@@ -38,7 +38,7 @@ public class BlazeFurnaceScreen extends AbstractContainerScreen<BlazeFurnaceMenu
 
     private void renderProgressArrow(GuiGraphics guiGraphics, int x, int y) {
         if (menu.isCrafing()){
-            guiGraphics.blit(TEXTURE,x+75,y-94,176,0,menu.getScaledProgress(),16);
+            guiGraphics.blit(TEXTURE,x+77,y-98,176,0,menu.getScaledProgress(),16);
         }
     }
 

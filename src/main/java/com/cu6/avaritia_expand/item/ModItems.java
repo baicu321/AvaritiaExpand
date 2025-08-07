@@ -11,7 +11,6 @@ import committee.nova.mods.avaritia.init.registry.ModRarities;
 
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Rarity;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -55,7 +54,9 @@ public static final RegistryObject<Item> CRYSTAL_SHIELD = ITEMS.register("crysta
     public static final RegistryObject<Item> INFINITY_EXPERIENCE_BOTTLE = ITEMS.register("infinity_experience_bottle",
         ()-> new InfinityExperienceBottle(new Item.Properties().rarity(ModRarities.COSMIC).stacksTo(1)));
 
-
+//test
+public static final RegistryObject<Item> TEST_ITEM = ITEMS.register("test_item",
+        ()-> new Item(new Item.Properties().rarity(ModRarities.COSMIC).stacksTo(1)));
 
 
 
