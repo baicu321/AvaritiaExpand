@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "avaritia:neutron_ingot"
+    }
+  },
+  "pattern": [
+    " #",
+    "# "
+  ],
+  "result": {
+    "item": "avaritia_expand:neutron_shears"
+  },
+  "show_notification": true
+}

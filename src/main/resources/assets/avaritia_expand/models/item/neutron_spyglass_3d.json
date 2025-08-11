@@ -1,0 +1,144 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"0": "avaritia_expand:item/neutron_spyglass_3d"
+	},
+	"elements": [
+		{
+			"name": "spyglass",
+			"from": [4.9, 12.9, 7.9],
+			"to": [8.1, 19.1, 11.1],
+			"rotation": {"angle": 0, "axis": "z", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 1.5, 3], "texture": "#0"},
+				"east": {"uv": [1.5, 0, 3, 3], "texture": "#0"},
+				"south": {"uv": [0, 3, 1.5, 6], "texture": "#0"},
+				"west": {"uv": [3, 0, 4.5, 3], "texture": "#0"},
+				"up": {"uv": [1.5, 7.5, 0, 6], "texture": "#0"},
+				"down": {"uv": [7.5, 0, 6, 1.5], "texture": "#0"}
+			}
+		},
+		{
+			"name": "spyglass",
+			"from": [5.3, 7, 8.25],
+			"to": [7.8, 13, 10.75],
+			"rotation": {"angle": 0, "axis": "z", "origin": [7.55, 8, 8.5]},
+			"faces": {
+				"north": {"uv": [1.5, 3, 3, 6], "texture": "#0"},
+				"east": {"uv": [3, 3, 4.5, 6], "texture": "#0"},
+				"south": {"uv": [4.5, 0, 6, 3], "texture": "#0"},
+				"west": {"uv": [4.5, 3, 6, 6], "texture": "#0"},
+				"up": {"uv": [3, 7.5, 1.5, 6], "texture": "#0"},
+				"down": {"uv": [7.5, 1.5, 6, 3], "texture": "#0"}
+			}
+		},
+		{
+			"name": "spyglass",
+			"from": [5.5, 3.5, 8.5],
+			"to": [7.5, 7, 10.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [5.5, 5, 8.5]},
+			"faces": {
+				"north": {"uv": [3, 6, 4, 8], "texture": "#0"},
+				"east": {"uv": [6, 3, 7, 5], "texture": "#0"},
+				"south": {"uv": [4, 6, 5, 8], "texture": "#0"},
+				"west": {"uv": [5, 6, 6, 8], "texture": "#0"},
+				"up": {"uv": [7, 6, 6, 5], "texture": "#0"},
+				"down": {"uv": [7, 6, 6, 7], "texture": "#0"}
+			}
+		},
+		{
+			"name": "spyglass",
+			"from": [4.3, 19.1, 7.9],
+			"to": [4.9, 20, 11.1],
+			"rotation": {"angle": 0, "axis": "y", "origin": [2.9, 18, 8]},
+			"faces": {
+				"north": {"uv": [2, 7.5, 2.5, 8], "texture": "#0"},
+				"east": {"uv": [7, 3, 8.5, 3.5], "texture": "#0"},
+				"south": {"uv": [2.5, 7.5, 3, 8], "texture": "#0"},
+				"west": {"uv": [7, 3.5, 8.5, 4], "texture": "#0"},
+				"up": {"uv": [7.5, 5.5, 7, 4], "texture": "#0"},
+				"down": {"uv": [7.5, 5.5, 7, 7], "texture": "#0"}
+			}
+		},
+		{
+			"name": "spyglass",
+			"from": [8.1, 19.1, 7.9],
+			"to": [8.7, 20, 11.1],
+			"rotation": {"angle": 0, "axis": "y", "origin": [6.7, 18, 8]},
+			"faces": {
+				"north": {"uv": [7.5, 6, 8, 6.5], "texture": "#0"},
+				"east": {"uv": [6, 7, 7.5, 7.5], "texture": "#0"},
+				"south": {"uv": [7.5, 6.5, 8, 7], "texture": "#0"},
+				"west": {"uv": [0, 7.5, 1.5, 8], "texture": "#0"},
+				"up": {"uv": [8, 1.5, 7.5, 0], "texture": "#0"},
+				"down": {"uv": [2, 7.5, 1.5, 9], "texture": "#0"}
+			}
+		},
+		{
+			"name": "spyglass",
+			"from": [4.9, 19.1, 7.4],
+			"to": [8.1, 20, 8],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 18, 6]},
+			"faces": {
+				"north": {"uv": [7.5, 1.5, 9, 2], "texture": "#0"},
+				"east": {"uv": [7.5, 7, 8, 7.5], "texture": "#0"},
+				"south": {"uv": [7.5, 2, 9, 2.5], "texture": "#0"},
+				"west": {"uv": [7.5, 7.5, 8, 8], "texture": "#0"},
+				"up": {"uv": [9, 3, 7.5, 2.5], "texture": "#0"},
+				"down": {"uv": [9, 4, 7.5, 4.5], "texture": "#0"}
+			}
+		},
+		{
+			"name": "spyglass",
+			"from": [4.9, 19.1, 11.1],
+			"to": [8.1, 20, 11.7],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 18, 9.7]},
+			"faces": {
+				"north": {"uv": [7.5, 4.5, 9, 5], "texture": "#0"},
+				"east": {"uv": [0, 8, 0.5, 8.5], "texture": "#0"},
+				"south": {"uv": [7.5, 5, 9, 5.5], "texture": "#0"},
+				"west": {"uv": [8, 0, 8.5, 0.5], "texture": "#0"},
+				"up": {"uv": [9, 6, 7.5, 5.5], "texture": "#0"},
+				"down": {"uv": [7.5, 7.5, 6, 8], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [177.25, 0, 0],
+			"translation": [1.5, -1.75, 2],
+			"scale": [0.8, 0.8, 0.8]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [177.25, 0, 0],
+			"translation": [-1, -0.75, 1.5],
+			"scale": [0.8, 0.8, 0.8]
+		},
+		"firstperson_righthand": {
+			"rotation": [-178, 0, 0],
+			"translation": [4.25, 1.75, 0]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-178, 0, 0],
+			"translation": [2, 2.5, 0]
+		}
+	},
+	"groups": [
+		{
+			"name": "spyglass",
+			"origin": [8, 0, 8],
+			"color": 0,
+			"children": [0, 1, 2, 3, 4, 5, 6]
+		}
+	],
+	"overrides": [
+		{
+			"predicate": {
+				"using": 1
+			},
+			"model": "avaritia_expand:item/neutron_spyglass_using"
+		}
+	]
+}

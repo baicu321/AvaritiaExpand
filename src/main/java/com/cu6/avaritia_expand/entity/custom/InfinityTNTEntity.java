@@ -33,7 +33,7 @@ public class InfinityTNTEntity extends Entity implements TraceableEntity {
     }
 
     public InfinityTNTEntity(Level pLevel, double pX, double pY, double pZ, @Nullable LivingEntity pOwner) {
-        this(ModEntities.INFINTITY_TNT_ENTITY.get(), pLevel);
+        this(ModEntities.INFINITY_TNT_ENTITY.get(), pLevel);
         this.setPos(pX, pY, pZ);
         double $$5 = pLevel.random.nextDouble() * (double)((float)Math.PI * 2F);
         this.setDeltaMovement(-Math.sin($$5) * 0.02, (double)0.2F, -Math.cos($$5) * 0.02);

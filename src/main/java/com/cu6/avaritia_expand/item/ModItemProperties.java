@@ -14,12 +14,12 @@ public class ModItemProperties {
 
     public static void register(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
-            // 注册鱼竿的cast属性
             registerFishingRodCast(ModItems.INFINITY_FISHINGROD.get());
             registerShieldBlocking(ModItems.BLAZE_SHIELD.get());
             registerShieldBlocking(ModItems.CRYSTAL_SHIELD.get());
-            // 可以在这里添加其他物品的属性注册
-            // registerBowPull(ModItems.YOUR_BOW.get());
+            registerBowProperties(ModItems.BLAZE_BOW.get());
+            registerBowProperties(ModItems.CRYSTAL_BOW.get());
+            registerSpyglassUsing(ModItems.NEUTRON_SPYGLASS.get());
         });
     }
 
@@ -48,6 +48,41 @@ public class ModItemProperties {
                        return entity != null &&
                                 entity.isUsingItem() &&
                                 entity.getUseItem() == stack ? 1.0F : 0.0F;
+                });
+    }
+    private static void registerBowProperties(Item item) {
+        // 拉弓进度属性
+        ItemProperties.register(item,
+                new ResourceLocation("pull"),
+                (stack, world, entity, seed) -> {
+                    if (entity == null) {
+                        return 0.0F;
+                    }
+                    // 检查玩家是否正在使用这个物品
+                    if (entity.getUseItem() != stack) {
+                        return 0.0F;
+                    }
+                    // 计算拉弓进度
+                    return (float) (stack.getUseDuration() - entity.getUseItemRemainingTicks()) / 20.0F;
+                });
+
+        // 是否正在拉弓
+        ItemProperties.register(item,
+                new ResourceLocation("pulling"),
+                (stack, world, entity, seed) -> {
+                    return entity != null &&
+                            entity.isUsingItem() &&
+                            entity.getUseItem() == stack ? 1.0F : 0.0F;
+                });
+
+    }
+    private static void registerSpyglassUsing(Item item) {
+        ItemProperties.register(item,
+                new ResourceLocation("using"),
+                (stack, world, entity, seed) -> {
+                    return entity != null &&
+                            entity.isUsingItem() &&
+                            entity.getUseItem() == stack ? 1.0F : 0.0F;
                 });
     }
 }

@@ -4,6 +4,7 @@ import com.electronwill.nightconfig.core.file.CommentedFileConfig;
 import com.electronwill.nightconfig.core.io.WritingMode;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.fml.common.Mod;
+import org.apache.commons.lang3.tuple.Pair;
 
 import java.nio.file.Path;
 
@@ -11,8 +12,29 @@ import java.nio.file.Path;
 public class ModConfig {
     private static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
     public static final ForgeConfigSpec SPEC;
+    public static class Client {
+        public final ForgeConfigSpec.DoubleValue spyglassIntensity;
 
+        Client(ForgeConfigSpec.Builder builder) {
+            builder.comment("Client settings")
+                    .push("Client");
 
+            spyglassIntensity = builder
+                    .comment("The intensity of the spyglass color overlay (0.5 = 50%) [Default: 0.5]")
+                    .defineInRange("spyglassIntensity", 0.5, 0.01, 1.0);
+
+            builder.pop();
+        }
+    }
+
+    public static final ForgeConfigSpec clientSpec;
+    public static final Client CLIENT;
+
+    static {
+        final Pair<Client, ForgeConfigSpec> specPair = new ForgeConfigSpec.Builder().configure(Client::new);
+        clientSpec = specPair.getRight();
+        CLIENT = specPair.getLeft();
+    }
     public static final ForgeConfigSpec.ConfigValue<Float> EXPLOSION_RADIUS;
     public static final ForgeConfigSpec.ConfigValue<Boolean> ALLOW_BREAK_BEDROCK;
     public static final ForgeConfigSpec.ConfigValue<Boolean> ALLOW_BREAK_OBSIDIAN;

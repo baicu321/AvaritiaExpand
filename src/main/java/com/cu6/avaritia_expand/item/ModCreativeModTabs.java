@@ -25,13 +25,16 @@ public class ModCreativeModTabs {
                         output.accept(com.cu6.avaritia_expand.item.ModItems.BLAZE_LEGGINGS.get());
                         output.accept(com.cu6.avaritia_expand.item.ModItems.BLAZE_BOOTS.get());
                         output.accept(com.cu6.avaritia_expand.item.ModItems.BLAZE_SHIELD.get());
+                        output.accept(com.cu6.avaritia_expand.item.ModItems.BLAZE_BOW.get());
                         output.accept(com.cu6.avaritia_expand.item.ModItems.CRYSTAL_HELMET.get());
                         output.accept(com.cu6.avaritia_expand.item.ModItems.CRYSTAL_CHESTPLATE.get());
                         output.accept(com.cu6.avaritia_expand.item.ModItems.CRYSTAL_LEGGINGS.get());
                         output.accept(com.cu6.avaritia_expand.item.ModItems.CRYSTAL_BOOTS.get());
                         output.accept(com.cu6.avaritia_expand.item.ModItems.CRYSTAL_SHIELD.get());
+                        output.accept(com.cu6.avaritia_expand.item.ModItems.CRYSTAL_BOW.get());
                         output.accept(com.cu6.avaritia_expand.item.ModItems.INFINITY_FISHINGROD.get());
                         output.accept(com.cu6.avaritia_expand.item.ModItems.INFINITY_EXPERIENCE_BOTTLE.get());
+                        output.accept(com.cu6.avaritia_expand.item.ModItems.NEUTRON_SHEARS.get());
                         //block
                         output.accept(ModBlocks.BLAZE_FURNACE.get());
                         output.accept(ModBlocks.CRYSTAL_FURNACE.get());

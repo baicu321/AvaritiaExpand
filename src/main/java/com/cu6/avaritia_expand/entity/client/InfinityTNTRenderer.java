@@ -1,6 +1,6 @@
 package com.cu6.avaritia_expand.entity.client;
 
-import com.cu6.avaritia_expand.AvaritiaExpand;
+
 import com.cu6.avaritia_expand.block.ModBlocks;
 import com.cu6.avaritia_expand.entity.custom.InfinityTNTEntity;
 import com.mojang.blaze3d.vertex.PoseStack;

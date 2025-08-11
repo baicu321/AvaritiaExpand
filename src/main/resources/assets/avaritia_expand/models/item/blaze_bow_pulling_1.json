@@ -1,0 +1,6 @@
+{
+  "parent": "avaritia_expand:item/blaze_bow",
+  "textures": {
+    "layer0": "avaritia_expand:item/blaze_bow_pulling_1"
+  }
+}

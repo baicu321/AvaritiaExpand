@@ -2,13 +2,13 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "avaritia_expand:item/infinity_experience_bottle",
-        "halo": "avaritia:misc/halo_noise"
+    "halo": "avaritia:misc/halo"
   },
-    "loader": "avaritia:halo",
-    "halo": {
-      "texture": "#halo",
-      "color": -1711276033,
-      "size": 6,
-      "pulse": false
-    }
+  "loader": "avaritia:halo",
+  "halo": {
+    "texture": "#halo",
+    "color": -16777216,
+    "size": 10,
+    "pulse": true
+  }
 }

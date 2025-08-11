@@ -30,7 +30,30 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Optional;
 
 public class BlazeFurnaceBlockEntity extends BlockEntity implements MenuProvider {
-    private final ItemStackHandler itemHandler = new ItemStackHandler(8);
+    private final ItemStackHandler itemHandler = new ItemStackHandler(8){
+        @Override
+        public boolean isItemValid(int slot, @NotNull ItemStack stack) {
+            if (isOutputSlot(slot)) return false;
+            if (isInputSlot(slot)) {
+                SimpleContainer test = new SimpleContainer(1);
+                test.setItem(0, stack);
+                return level != null && level.getRecipeManager()
+                        .getRecipeFor(RecipeType.SMELTING, test, level).isPresent();
+            }
+            return false;
+        }
+    };
+    private boolean isInputSlot(int slot) {
+        for (int s : INPUT_SLOT) if (s == slot) return true;
+        return false;
+    }
+    private boolean isOutputSlot(int slot) {
+        for (int s : OUTPUT_SLOT) if (s == slot) return true;
+        return false;
+    }
+    private LazyOptional<IItemHandler> playerHandler = LazyOptional.of(() -> itemHandler);
+    private LazyOptional<IItemHandler> hopperHandler = LazyOptional.of(() -> new BlazeFurnaceBlockEntity.SidedItemHandler(itemHandler));
+
     public static final int[] INPUT_SLOT = {4, 5, 6, 7};
     public static final int[] OUTPUT_SLOT = {0, 1, 2, 3};
 
@@ -69,12 +92,67 @@ public class BlazeFurnaceBlockEntity extends BlockEntity implements MenuProvider
 
     @Override
     public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
-        if (cap == ForgeCapabilities.ITEM_HANDLER){
-            return lazyItemHandler.cast();
+        if (cap == ForgeCapabilities.ITEM_HANDLER) {
+            if (side == null) {
+                // 玩家交互：不限制取出
+                return playerHandler.cast();
+            } else {
+                // 漏斗交互：限制输入/输出
+                return hopperHandler.cast();
+            }
         }
         return super.getCapability(cap, side);
     }
+    private static class SidedItemHandler implements IItemHandler {
+        private final IItemHandler parent;
 
+        public SidedItemHandler(IItemHandler parent) {
+            this.parent = parent;
+        }
+
+        @Override
+        public int getSlots() {
+            return parent.getSlots();
+        }
+
+        @Override
+        public @NotNull ItemStack getStackInSlot(int slot) {
+            return parent.getStackInSlot(slot);
+        }
+
+        @Override
+        public @NotNull ItemStack insertItem(int slot, @NotNull ItemStack stack, boolean simulate) {
+            if (slotIsOutput(slot)) return stack; // 漏斗不能放入输出槽
+            return parent.insertItem(slot, stack, simulate);
+        }
+
+        @Override
+        public @NotNull ItemStack extractItem(int slot, int amount, boolean simulate) {
+            if (slotIsInput(slot)) return ItemStack.EMPTY; // 漏斗不能从输入/燃料取
+            return parent.extractItem(slot, amount, simulate);
+        }
+
+        @Override
+        public int getSlotLimit(int slot) {
+            return parent.getSlotLimit(slot);
+        }
+
+        @Override
+        public boolean isItemValid(int slot, @NotNull ItemStack stack) {
+            return parent.isItemValid(slot, stack);
+        }
+
+        private boolean slotIsInput(int slot) {
+            for (int s : INPUT_SLOT) if (s == slot) return true;
+            return false;
+        }
+
+        private boolean slotIsOutput(int slot) {
+            for (int s : OUTPUT_SLOT) if (s == slot) return true;
+            return false;
+        }
+
+    }
     @Override
     public void onLoad() {
         super.onLoad();

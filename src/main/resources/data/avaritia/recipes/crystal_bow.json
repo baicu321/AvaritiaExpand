@@ -1,0 +1,29 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "avaritia:crystal_matrix"
+    },
+    "B":{
+      "item": "avaritia:neutron_ingot"
+    },
+    "C": {
+      "item": "avaritia:crystal_matrix_ingot"
+    }
+  },
+  "pattern": [
+    "  ACB  ",
+    " AC B  ",
+    "AC  B  ",
+    "AC  B  ",
+    "AC  B  ",
+    " AC B  ",
+    "  ACB  "
+  ],
+  "result": {
+    "item": "avaritia_expand:crystal_bow"
+  },
+  "show_notification": true,
+  "tier": 3
+}
