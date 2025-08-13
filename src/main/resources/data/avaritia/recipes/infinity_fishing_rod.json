@@ -2,10 +2,10 @@
   "type": "avaritia:extreme_smithing",
   "addition": [
     {
-      "item": "avaritia:infinity_ingot"
+      "item": "avaritia:neutron_gear"
     },
     {
-      "item": "avaritia:endest_pearl"
+      "item": "minecraft:heart_of_the_sea"
     },
     {
       "item": "avaritia:enhancement_core"
@@ -15,7 +15,7 @@
     "item": "minecraft:experience_bottle"
   },
   "result": {
-    "item": "avaritia_expand:infinity_experience_bottle"
+    "item": "avaritia_expand:infinity_fishing_rod"
   },
   "template": {
     "item": "avaritia:upgrade_smithing_template"

@@ -1,23 +1,43 @@
 {
-  "type": "avaritia:extreme_smithing",
-  "addition": [
-    {
-      "item": "avaritia:neutron_gear"
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "avaritia:neutron_ingot"
     },
-    {
-      "item": "minecraft:heart_of_the_sea"
+    "B": {
+      "item": "minecraft:quartz_block"
     },
-    {
-      "item": "avaritia:enhancement_core"
+    "D": {
+      "item": "avaritia:infinity_catalyst"
+    },
+    "E": {
+      "item": "minecraft:experience_bottle"
+    },
+    "F": {
+      "item": "avaritia:neutron"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "H": {
+      "item": "avaritia:infinity_nugget"
     }
+  },
+  "pattern": [
+    "   AAA   ",
+    "  ABFBA  ",
+    "  AGEGA  ",
+    "  AGHGA  ",
+    " AGEHEGA ",
+    " AGEDEGA ",
+    " AGEEEGA ",
+    "  AGGGA  ",
+    "   AAA   "
   ],
-  "base": {
-    "item": "minecraft:fishing_rod"
-  },
   "result": {
-    "item": "avaritia_expand:infinity_fishing_rod"
+    "item": "avaritia_expand:infinity_experience_bottle"
   },
-  "template": {
-    "item": "avaritia:upgrade_smithing_template"
-  }
+  "show_notification": true,
+  "tier": 4
 }

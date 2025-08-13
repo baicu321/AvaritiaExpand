@@ -1,7 +1,6 @@
 package com.cu6.avaritia_expand.item.tool;
 
 import committee.nova.mods.avaritia.common.entity.BladeSlashEntity;
-import committee.nova.mods.avaritia.init.registry.ModSounds;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -52,40 +51,55 @@ public class CrystalBowItem extends BowItem {
 
                     boolean isInfinite = player.getAbilities().instabuild || hasInfinity;
 
+                    int multishotLevel = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.MULTISHOT, pStack);
+
+                    int projectileCount = multishotLevel > 0 ? 3 : 1;
+
                     if (!pLevel.isClientSide) {
 
-                        BladeSlashEntity bladeSlash = new BladeSlashEntity(pLevel, player);
+                        for (int i = 0; i < projectileCount; i++) {
+                            BladeSlashEntity bladeSlash = new BladeSlashEntity(pLevel, player);
+
+                            float speed = BladeSlashEntity.defaultSpeed * (1.0F + power * 2.0F);
+                            float inaccuracy = 0.5F - (power * 0.4F);
 
 
-                        float speed = BladeSlashEntity.defaultSpeed * (1.0F + power * 2.0F); // 基础速度2.0F，满弓时达到6.0F
-                        float inaccuracy = 0.5F - (power * 0.4F);
-                        bladeSlash.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, speed, inaccuracy);
+                            float yawOffset = 0.0F;
+                            if (multishotLevel > 0) {
+
+                                yawOffset = (i == 0) ? -10.0F : (i == 1) ? 10.0F : 0.0F;
+                            }
 
 
-                        int powerLevel = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.POWER_ARROWS, pStack);
-                        float damageBoost = (float) powerLevel * 1.2F + (power * 5.0F);
-                        bladeSlash.damage += damageBoost;
+                            bladeSlash.shootFromRotation(
+                                    player,
+                                    player.getXRot(),
+                                    player.getYRot() + yawOffset,
+                                    0.0F,
+                                    speed,
+                                    inaccuracy
+                            );
 
+                            int powerLevel = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.POWER_ARROWS, pStack);
+                            float damageBoost = (float) powerLevel * 1.2F + (power * 5.0F);
+                            bladeSlash.damage += damageBoost;
 
-                        bladeSlash.duration += (int) (power * 20);
+                            bladeSlash.duration += (int) (power * 20);
 
+                            if (EnchantmentHelper.getItemEnchantmentLevel(Enchantments.FLAMING_ARROWS, pStack) > 0) {
+                                bladeSlash.setSecondsOnFire(100);
+                            }
 
-                        if (EnchantmentHelper.getItemEnchantmentLevel(Enchantments.FLAMING_ARROWS, pStack) > 0) {
-                            bladeSlash.setSecondsOnFire(100);
+                            pLevel.addFreshEntity(bladeSlash);
                         }
 
 
                         pStack.hurtAndBreak(1, player, (user) -> user.broadcastBreakEvent(player.getUsedItemHand()));
-
-
-                        pLevel.addFreshEntity(bladeSlash);
                     }
-
 
                     pLevel.playSound(null, player.getX(), player.getY(), player.getZ(),
                             SoundEvents.PLAYER_ATTACK_SWEEP, SoundSource.PLAYERS,
                             1.0F, 0.8F + (power * 0.4F));
-
 
                     if (!isInfinite && !player.getAbilities().instabuild) {
                         ammo.shrink(1);
@@ -94,11 +108,18 @@ public class CrystalBowItem extends BowItem {
                         }
                     }
 
-
                     player.awardStat(Stats.ITEM_USED.get(this));
                 }
             }
         }
+    }
+
+    @Override
+    public void onCraftedBy(ItemStack stack, Level level, Player player) {
+        super.onCraftedBy(stack, level, player);
+
+        stack.enchant(Enchantments.INFINITY_ARROWS,1);
+        stack.enchant(Enchantments.MULTISHOT,1);
     }
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {

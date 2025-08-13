@@ -8,18 +8,25 @@
     "B":{
       "item": "avaritia:neutron_ingot"
     },
-    "C": {
+    "C":{
       "item": "avaritia:crystal_matrix_ingot"
+    },
+    "D": {
+      "item": "minecraft:nether_star"
+    },
+    "E": {
+      "item": "avaritia:diamond_lattice"
     }
+
   },
   "pattern": [
-    "  ACB  ",
-    " AC B  ",
-    "AC  B  ",
-    "AC  B  ",
-    "AC  B  ",
-    " AC B  ",
-    "  ACB  "
+    "    CCE",
+    "  AA  B",
+    " ADA B ",
+    " AA B  ",
+    "C  B   ",
+    "C B    ",
+    "EB     "
   ],
   "result": {
     "item": "avaritia_expand:crystal_bow"
