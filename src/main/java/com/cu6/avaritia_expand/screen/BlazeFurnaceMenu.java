@@ -2,6 +2,7 @@ package com.cu6.avaritia_expand.screen;
 
 import com.cu6.avaritia_expand.block.ModBlocks;
 import com.cu6.avaritia_expand.block.entity.BlazeFurnaceBlockEntity;
+import net.minecraft.client.gui.components.ImageWidget;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -17,7 +18,6 @@ public class BlazeFurnaceMenu extends AbstractContainerMenu {
     private final Level level;
     private final ContainerData data;
 
-
     public BlazeFurnaceMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData){
         this(pContainerId,inv,inv.player.level().getBlockEntity(extraData.readBlockPos()),new SimpleContainerData(8));
     }
@@ -28,17 +28,19 @@ public class BlazeFurnaceMenu extends AbstractContainerMenu {
         blockEntity = ((BlazeFurnaceBlockEntity) entity);
         this.level = inv.player.level();
         this.data = data;
-
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
 
 
         this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(iItemHandler -> {
+
             for (int i = 0; i < 4; i++) {
-                this.addSlot(new SlotItemHandler(iItemHandler, i, 114 + (i % 2) * 18, 22 + (i / 2) * 18) {
+                int slotX = 114 + (i % 2) * 18;
+                int slotY = 22 + (i / 2) * 18;
+                this.addSlot(new SlotItemHandler(iItemHandler, i, slotX, slotY) {
                     @Override
                     public boolean mayPlace(ItemStack stack) {
-                        return false; // 输出槽不能放入物品
+                        return false;
                     }
                 });
             }

@@ -31,15 +31,15 @@ public class CrystalFurnaceScreen extends AbstractContainerScreen<CrystalFurnace
         RenderSystem.setShaderColor(1.0F,1.0F,1.0F,1.0F);
         RenderSystem.setShaderTexture(0,TEXTURE);
         int x = (width - imageWidth)/2;
-        int y = (height - imageHeight/2);
-        guiGraphics.blit(TEXTURE,x,30,0,0,176,240);
+        int y = (height - imageHeight)/2;
+        guiGraphics.blit(TEXTURE,x,y-22,0,0,176,240);
 
         renderProgressArrow(guiGraphics,x,y);
     }
 
     private void renderProgressArrow(GuiGraphics guiGraphics, int x, int y) {
         if (menu.isCrafting()){
-            guiGraphics.blit(TEXTURE,x+64,y-100,176,0,menu.getScaledProgress(),10);
+            guiGraphics.blit(TEXTURE,x+64,y+35,176,0,menu.getScaledProgress(),10);
         }
     }
 

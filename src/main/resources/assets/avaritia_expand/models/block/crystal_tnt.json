@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "avaritia_expand:block/crystal_tnt_block_bottom",
+    "side": "avaritia_expand:block/crystal_tnt_block_side",
+    "top": "avaritia_expand:block/crystal_tnt_block_top"
+  }
+}

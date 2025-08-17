@@ -4,6 +4,7 @@ package com.cu6.avaritia_expand;
 import com.cu6.avaritia_expand.block.ModBlocks;
 import com.cu6.avaritia_expand.block.entity.ModBlockEntities;
 import com.cu6.avaritia_expand.entity.ModEntities;
+import com.cu6.avaritia_expand.entity.client.CrystalTNTRenderer;
 import com.cu6.avaritia_expand.entity.client.InfinityFishingHookRender;
 import com.cu6.avaritia_expand.entity.client.InfinityTNTRenderer;
 import com.cu6.avaritia_expand.item.ModCreativeModTabs;
@@ -74,6 +75,7 @@ public class AvaritiaExpand {
             MenuScreens.register(ModMenuTypes.BLAZE_FURNACE_MENU.get(), BlazeFurnaceScreen::new);
             MenuScreens.register(ModMenuTypes.CRYSTAL_FURNACE_MENU.get(), CrystalFurnaceScreen::new);
             EntityRenderers.register(ModEntities.INFINITY_TNT_ENTITY.get(), InfinityTNTRenderer::new);
+            EntityRenderers.register(ModEntities.CRYSTAL_TNT_ENTITY.get(), CrystalTNTRenderer::new);
             EntityRenderers.register(ModEntities.INFINITY_FISHING_HOOK.get(), InfinityFishingHookRender::new);
         }
     }
