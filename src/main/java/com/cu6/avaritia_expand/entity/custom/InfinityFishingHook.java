@@ -169,7 +169,7 @@ public class InfinityFishingHook extends FishingHook {
             float f = 0.0F;
             BlockPos blockpos = this.blockPosition();
             FluidState fluidstate = this.level().getFluidState(blockpos);
-            if (fluidstate.is(FluidTags.WATER) || fluidstate.is(FluidTags.LAVA)) { // 新增岩浆判断
+            if (fluidstate.is(FluidTags.WATER) || fluidstate.is(FluidTags.LAVA)) {
                 f = fluidstate.getHeight(this.level(), blockpos);
             }
 
@@ -255,9 +255,6 @@ public class InfinityFishingHook extends FishingHook {
 
 
     private boolean shouldStopFishing(Player pPlayer) {
-        if (this.level() instanceof ServerLevel) {
-            LOGGER.info("钓鱼钩与玩家距离: " + this.distanceToSqr(pPlayer));
-        }
         ItemStack itemstack = pPlayer.getMainHandItem();
         ItemStack itemstack1 = pPlayer.getOffhandItem();
         boolean flag = itemstack.canPerformAction(ToolActions.FISHING_ROD_CAST);
@@ -379,6 +376,11 @@ public class InfinityFishingHook extends FishingHook {
                 BlockState blockstate1 = serverlevel.getBlockState(BlockPos.containing(d4, d5 - (double)1.0F, d6));
                 if (blockstate1.is(Blocks.WATER)) {
                     serverlevel.sendParticles(ParticleTypes.SPLASH, d4, d5, d6, 2 + this.random.nextInt(2), (double)0.1F, (double)0.0F, (double)0.1F, (double)0.0F);
+                }else if (blockstate1.is(Blocks.LAVA)){
+                    serverlevel.sendParticles(ParticleTypes.LAVA, this.getX(), this.getY() + 0.5, this.getZ(),
+                            5,  0.2, 0.2, 0.2, 0.05);
+                    serverlevel.sendParticles(ParticleTypes.SMOKE, this.getX(), this.getY() + 0.5, this.getZ(),
+                            5, 0.2, 0.2, 0.2, 0.01);
                 }
             }
 
@@ -387,7 +389,7 @@ public class InfinityFishingHook extends FishingHook {
                 this.timeUntilHooked = Mth.nextInt(this.random, 20, 80);
             }
         } else {
-            this.timeUntilLured = Mth.nextInt(this.random, 100, 600);
+            this.timeUntilLured = Mth.nextInt(this.random, 60, 100);
             this.timeUntilLured -= this.lureSpeed * 20 * 5;
         }
 
@@ -453,23 +455,27 @@ public class InfinityFishingHook extends FishingHook {
                 this.level().broadcastEntityEvent(this, (byte)31);
                 i = this.hookedIn instanceof ItemEntity ? 3 : 5;
             } else if (this.nibble > 0) {
-                LootParams lootparams = (new LootParams.Builder((ServerLevel)this.level()))
+                LootParams lootparams = (new LootParams.Builder((ServerLevel) this.level()))
                         .withParameter(LootContextParams.ORIGIN, this.position())
                         .withParameter(LootContextParams.TOOL, pStack)
                         .withParameter(LootContextParams.THIS_ENTITY, this)
                         .withParameter(LootContextParams.KILLER_ENTITY, this.getOwner())
-                        .withLuck((float)this.luck + player.getLuck())
+                        .withLuck((float) this.luck + player.getLuck())
                         .create(LootContextParamSets.FISHING);
                 BlockPos blockpos = this.blockPosition();
                 FluidState fluidstate = this.level().getFluidState(blockpos);
+
                 LootTable loottable;
-                if (fluidstate.is(FluidTags.LAVA)) {
+
+                CompoundTag nbt = pStack.getOrCreateTag();
+                boolean isLootMode = nbt.getBoolean("loot");
+                if (isLootMode) {
                     loottable = this.level().getServer().getLootData().getLootTable(
-                            new ResourceLocation(AvaritiaExpand.MOD_ID, "fishing/lava_fishing"));
+                            new ResourceLocation(AvaritiaExpand.MOD_ID, "fishing/loot_fishing"));
 
                 } else {
                     loottable = this.level().getServer().getLootData().getLootTable(BuiltInLootTables.FISHING);
-                }
+                 }
                 List<ItemStack> list = loottable.getRandomItems(lootparams);
                 event = new ItemFishedEvent(list, this.onGround() ? 2 : 1, this);
                 MinecraftForge.EVENT_BUS.post(event);
@@ -478,10 +484,13 @@ public class InfinityFishingHook extends FishingHook {
                     return event.getRodDamage();
                 }
 
-                // 移除成就触发
+
 
                 for(ItemStack itemstack : list) {
                     ItemEntity itementity = new ItemEntity(this.level(), this.getX(), this.getY(), this.getZ(), itemstack);
+
+                    itementity.setInvulnerable(true);
+
                     double d0 = player.getX() - this.getX();
                     double d1 = player.getY() - this.getY();
                     double d2 = player.getZ() - this.getZ();
@@ -491,9 +500,16 @@ public class InfinityFishingHook extends FishingHook {
                             d2 * 0.1
                     );
                     this.level().addFreshEntity(itementity);
+                    if (fluidstate.is(FluidTags.LAVA)) {
+                        if (this.level() instanceof ServerLevel serverlevel) {
+                            serverlevel.sendParticles(ParticleTypes.LAVA, this.getX(), this.getY() + 0.5, this.getZ(),
+                                    20,  0.5, 0.5, 0.5, 0.1);
+                            serverlevel.sendParticles(ParticleTypes.SMOKE, this.getX(), this.getY() + 0.5, this.getZ(),
+                                    5, 0.2, 0.2, 0.2, 0.01);
+                        }
+                        i = 1;
+                    }
                 }
-
-                i = 1;
             }
 
             if (this.onGround()) {

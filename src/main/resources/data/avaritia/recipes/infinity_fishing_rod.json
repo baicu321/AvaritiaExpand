@@ -12,7 +12,7 @@
     }
   ],
   "base": {
-    "item": "minecraft:experience_bottle"
+    "item": "minecraft:fishing_rod"
   },
   "result": {
     "item": "avaritia_expand:infinity_fishing_rod"
