@@ -49,7 +49,7 @@ public class InfinityTNT extends Block {
             tntEntity.setFuse(FUSE_TIME);
 
 
-            tntEntity.setExplosionRadius(Math.round(ModConfig.EXPLOSION_RADIUS.get()));
+            tntEntity.setExplosionRadius(Math.round(ModConfig.InfinityTNTExplosionRadius.get()));
 
 
             level.addFreshEntity(tntEntity);

@@ -64,8 +64,14 @@ public static final RegistryObject<Item> NEUTRON_SPYGLASS = ITEMS.register("neut
     public static final RegistryObject<Item> INFINITY_EXPERIENCE_BOTTLE = ITEMS.register("infinity_experience_bottle",
         ()-> new InfinityExperienceBottle(new Item.Properties().rarity(ModRarities.COSMIC).stacksTo(1).fireResistant()));
 
+//Blaze_Items
+public static final RegistryObject<Item> BLAZE_NUGGET = ITEMS.register("blaze_nugget",
+        ()-> new Item(new Item.Properties().rarity(ModRarities.EPIC)));
 
 
+//Crystal_Items
+public static final RegistryObject<Item> CRYSTAL_NUGGET = ITEMS.register("crystal_nugget",
+        ()-> new Item(new Item.Properties().rarity(ModRarities.EPIC)));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

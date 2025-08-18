@@ -1,0 +1,38 @@
+{
+  "parent": "avaritia:infinity/infinity_ingot",
+  "criteria": {
+    "main": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "avaritia_expand:infinity_fishing_rod"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.avaritia_expand.infinity_fishing_rod.desc"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "item": "avaritia_expand:infinity_fishing_rod"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.avaritia_expand.infinity_fishing_rod.title"
+    }
+  },
+  "requirements": [
+    [
+      "main"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

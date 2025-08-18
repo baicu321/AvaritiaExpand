@@ -29,7 +29,7 @@ public class InfinityTNTEntity extends Entity implements TraceableEntity {
     public InfinityTNTEntity(EntityType<InfinityTNTEntity> type, Level level) {
         super(type, level);
 
-        this.explosionRadius = Math.round(ModConfig.EXPLOSION_RADIUS.get());
+        this.explosionRadius = Math.round(ModConfig.InfinityTNTExplosionRadius.get());
     }
 
     public InfinityTNTEntity(Level pLevel, double pX, double pY, double pZ, @Nullable LivingEntity pOwner) {
@@ -43,7 +43,7 @@ public class InfinityTNTEntity extends Entity implements TraceableEntity {
         this.zo = pZ;
         this.owner = pOwner;
 
-        this.explosionRadius = Math.round(ModConfig.EXPLOSION_RADIUS.get());
+        this.explosionRadius = Math.round(ModConfig.InfinityTNTExplosionRadius.get());
     }
 
 
@@ -107,7 +107,7 @@ public class InfinityTNTEntity extends Entity implements TraceableEntity {
 
                     if ((x*x + z*z) <= radius * radius) {
 
-                        for (int yOffset = -40; yOffset <= 10; yOffset++) {
+                        for (int yOffset = ModConfig.InfinityTNTExplosionLength.get(); yOffset <= 10; yOffset++) {
                             BlockPos pos = center.offset(x, yOffset, z);
                             BlockState state = level.getBlockState(pos);
                             Block block = state.getBlock();
@@ -116,12 +116,12 @@ public class InfinityTNTEntity extends Entity implements TraceableEntity {
                             boolean canBreak = true;
 
 
-                            if (block == Blocks.BEDROCK && !ModConfig.ALLOW_BREAK_BEDROCK.get()) {
+                            if (block == Blocks.BEDROCK && !ModConfig.InfinityTNTCanBreakBedRock.get()) {
                                 canBreak = false;
                             }
 
 
-                            if (block == Blocks.OBSIDIAN && !ModConfig.ALLOW_BREAK_OBSIDIAN.get()) {
+                            if (block == Blocks.OBSIDIAN && !ModConfig.InfinityTNTCanBreakObsidian.get()) {
                                 canBreak = false;
                             }
 

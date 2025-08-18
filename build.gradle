@@ -62,6 +62,7 @@ minecraft {
 }
 
 
+
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 repositories {
     maven {
@@ -90,6 +91,9 @@ dependencies {
     //Curios
     runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}")
     compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}:api")
+    //Configured
+    implementation fg.deobf("curse.maven:configured-457570:5180900")
+    //Mixin
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 tasks.named('processResources', ProcessResources).configure {
     var replaceProperties = [

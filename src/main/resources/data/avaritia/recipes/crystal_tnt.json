@@ -1,0 +1,29 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "minecraft:tnt"
+    },
+    "B":{
+      "item": "avaritia_expand:crystal_nugget"
+    },
+    "C": {
+      "item": "avaritia:crystal_matrix_ingot"
+    }
+  },
+  "pattern": [
+    "       ",
+    " BBBBB ",
+    " BCACB ",
+    " BAAAB ",
+    " BCACB ",
+    " BBBBB ",
+    "       "
+  ],
+  "result": {
+    "item": "avaritia_expand:crystal_tnt"
+  },
+  "show_notification": true,
+  "tier": 3
+}

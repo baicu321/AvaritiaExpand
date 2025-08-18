@@ -6518,7 +6518,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:bone_block",
+          "name": "avaritia:blaze_cube",
           "conditions": [
             {
               "condition": "minecraft:location_check",
@@ -7302,7 +7302,104 @@
         },
         {
           "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "enchantments": [
+                "minecraft:protection",
+                "minecraft:unbreaking"
+              ],
+              "levels": 40,
+              "treasure": true,
+              "conditions": []
+            }
+          ],
+
+          "name": "minecraft:diamond_helmet",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biome": "minecraft:end_barrens",
+                "fluid": {
+                  "tag": "minecraft:water"
+                }
+              }
+            }
+          ],
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "enchantments": [
+                "minecraft:protection",
+                "minecraft:unbreaking"
+              ],
+              "levels": 40,
+              "treasure": true,
+              "conditions": []
+            }
+          ],
           "name": "minecraft:diamond_chestplate",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biome": "minecraft:end_barrens",
+                "fluid": {
+                  "tag": "minecraft:water"
+                }
+              }
+            }
+          ],
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "enchantments": [
+                "minecraft:protection",
+                "minecraft:unbreaking"
+              ],
+              "levels": 40,
+              "treasure": true,
+              "conditions": []
+            }
+          ],
+          "name": "minecraft:diamond_leggings",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biome": "minecraft:end_barrens",
+                "fluid": {
+                  "tag": "minecraft:water"
+                }
+              }
+            }
+          ],
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "enchantments": [
+                "minecraft:protection",
+                "minecraft:unbreaking"
+              ],
+              "levels": 40,
+              "treasure": true,
+              "conditions": []
+            }
+          ],
+          "name": "minecraft:diamond_boots",
           "conditions": [
             {
               "condition": "minecraft:location_check",
@@ -7494,7 +7591,103 @@
         },
         {
           "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "enchantments": [
+                "minecraft:protection",
+                "minecraft:unbreaking"
+              ],
+              "levels": 40,
+              "treasure": true,
+              "conditions": []
+            }
+          ],
+          "name": "minecraft:diamond_boots",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biome": "minecraft:end_highlands",
+                "fluid": {
+                  "tag": "minecraft:water"
+                }
+              }
+            }
+          ],
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "enchantments": [
+                "minecraft:protection",
+                "minecraft:unbreaking"
+              ],
+              "levels": 40,
+              "treasure": true,
+              "conditions": []
+            }
+          ],
+          "name": "minecraft:diamond_helmet",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biome": "minecraft:end_highlands",
+                "fluid": {
+                  "tag": "minecraft:water"
+                }
+              }
+            }
+          ],
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "enchantments": [
+                "minecraft:protection",
+                "minecraft:unbreaking"
+              ],
+              "levels": 40,
+              "treasure": true,
+              "conditions": []
+            }
+          ],
           "name": "minecraft:diamond_chestplate",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biome": "minecraft:end_highlands",
+                "fluid": {
+                  "tag": "minecraft:water"
+                }
+              }
+            }
+          ],
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "enchantments": [
+                "minecraft:protection",
+                "minecraft:unbreaking"
+              ],
+              "levels": 40,
+              "treasure": true,
+              "conditions": []
+            }
+          ],
+          "name": "minecraft:diamond_leggings",
           "conditions": [
             {
               "condition": "minecraft:location_check",
@@ -7686,7 +7879,103 @@
         },
         {
           "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "enchantments": [
+                "minecraft:protection",
+                "minecraft:unbreaking"
+              ],
+              "levels": 40,
+              "treasure": true,
+              "conditions": []
+            }
+          ],
+          "name": "minecraft:diamond_boots",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biome": "minecraft:end_midlands",
+                "fluid": {
+                  "tag": "minecraft:water"
+                }
+              }
+            }
+          ],
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "enchantments": [
+                "minecraft:protection",
+                "minecraft:unbreaking"
+              ],
+              "levels": 40,
+              "treasure": true,
+              "conditions": []
+            }
+          ],
+          "name": "minecraft:diamond_helmet",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biome": "minecraft:end_midlands",
+                "fluid": {
+                  "tag": "minecraft:water"
+                }
+              }
+            }
+          ],
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "enchantments": [
+                "minecraft:protection",
+                "minecraft:unbreaking"
+              ],
+              "levels": 40,
+              "treasure": true,
+              "conditions": []
+            }
+          ],
           "name": "minecraft:diamond_chestplate",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biome": "minecraft:end_midlands",
+                "fluid": {
+                  "tag": "minecraft:water"
+                }
+              }
+            }
+          ],
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "enchantments": [
+                "minecraft:protection",
+                "minecraft:unbreaking"
+              ],
+              "levels": 40,
+              "treasure": true,
+              "conditions": []
+            }
+          ],
+          "name": "minecraft:diamond_leggings",
           "conditions": [
             {
               "condition": "minecraft:location_check",
@@ -7878,7 +8167,103 @@
         },
         {
           "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "enchantments": [
+                "minecraft:protection",
+                "minecraft:unbreaking"
+              ],
+              "levels": 40,
+              "treasure": true,
+              "conditions": []
+            }
+          ],
+          "name": "minecraft:diamond_boots",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biome": "minecraft:small_end_islands",
+                "fluid": {
+                  "tag": "minecraft:water"
+                }
+              }
+            }
+          ],
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "enchantments": [
+                "minecraft:protection",
+                "minecraft:unbreaking"
+              ],
+              "levels": 40,
+              "treasure": true,
+              "conditions": []
+            }
+          ],
+          "name": "minecraft:diamond_helmet",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biome": "minecraft:small_end_islands",
+                "fluid": {
+                  "tag": "minecraft:water"
+                }
+              }
+            }
+          ],
+          "weight": 1
+        },
+      {
+      "type": "minecraft:item",
+      "functions": [
+        {
+          "function": "minecraft:enchant_with_levels",
+          "enchantments": [
+            "minecraft:protection",
+            "minecraft:unbreaking"
+          ],
+          "levels": 40,
+          "treasure": true,
+          "conditions": []
+        }
+      ],
           "name": "minecraft:diamond_chestplate",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "biome": "minecraft:small_end_islands",
+                "fluid": {
+                  "tag": "minecraft:water"
+                }
+              }
+            }
+          ],
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "enchantments": [
+                "minecraft:protection",
+                "minecraft:unbreaking"
+              ],
+              "levels": 40,
+              "treasure": true,
+              "conditions": []
+            }
+          ],
+          "name": "minecraft:diamond_leggings",
           "conditions": [
             {
               "condition": "minecraft:location_check",
@@ -8598,8 +8983,6 @@
           ],
           "weight": 1
         }
-
-
       ]
     }
   ]

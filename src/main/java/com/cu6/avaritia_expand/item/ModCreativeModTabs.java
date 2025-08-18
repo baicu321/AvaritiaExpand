@@ -25,12 +25,14 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.BLAZE_BOOTS.get());
                         output.accept(ModItems.BLAZE_SHIELD.get());
                         output.accept(ModItems.BLAZE_BOW.get());
+                        output.accept(ModItems.BLAZE_NUGGET.get());
                         output.accept(ModItems.CRYSTAL_HELMET.get());
                         output.accept(ModItems.CRYSTAL_CHESTPLATE.get());
                         output.accept(ModItems.CRYSTAL_LEGGINGS.get());
                         output.accept(ModItems.CRYSTAL_BOOTS.get());
                         output.accept(ModItems.CRYSTAL_SHIELD.get());
                         output.accept(ModItems.CRYSTAL_BOW.get());
+                        output.accept(ModItems.CRYSTAL_NUGGET.get());
                         output.accept(ModItems.INFINITY_FISHINGROD.get());
                         output.accept(ModItems.INFINITY_EXPERIENCE_BOTTLE.get());
                         output.accept(ModItems.NEUTRON_SHEARS.get());

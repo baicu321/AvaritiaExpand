@@ -28,6 +28,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLPaths;
 import org.slf4j.Logger;
+import org.spongepowered.asm.mixin.Mixin;
 
 @Mod(AvaritiaExpand.MOD_ID)
 public class AvaritiaExpand {
@@ -39,7 +40,7 @@ public class AvaritiaExpand {
     public AvaritiaExpand() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ModCreativeModTabs.register(modEventBus);
-        ModConfig.loadConfig(ModConfig.SPEC, FMLPaths.CONFIGDIR.get().resolve(MOD_ID + ".toml"));
+        ModConfig.register();
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlockEntities.register(modEventBus);

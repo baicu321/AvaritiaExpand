@@ -1,12 +1,16 @@
 package com.cu6.avaritia_expand.item.tool;
 
 import com.cu6.avaritia_expand.entity.custom.InfinityXP;
+import committee.nova.mods.avaritia.common.entity.ImmortalItemEntity;
+import committee.nova.mods.avaritia.init.registry.ModEntities;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.ThrownExperienceBottle;
 import net.minecraft.world.item.Item;
@@ -21,9 +25,17 @@ public class InfinityExperienceBottle extends Item {
     public InfinityExperienceBottle(Properties pProperties) {
         super(pProperties);
     }
+    public boolean isDamageable(ItemStack stack) {
+        return false;
+    }
 
+    public boolean hasCustomEntity(ItemStack stack) {
+        return true;
+    }
 
-
+    public @Nullable Entity createEntity(Level level, Entity location, ItemStack stack) {
+        return ImmortalItemEntity.create(ModEntities.IMMORTAL.get(), level, location.getX(), location.getY(), location.getZ(), stack);
+    }
     public boolean isFoil(ItemStack pStack) {
         return true;
     }

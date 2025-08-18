@@ -1,74 +1,56 @@
 package com.cu6.avaritia_expand;
 
-import com.electronwill.nightconfig.core.file.CommentedFileConfig;
-import com.electronwill.nightconfig.core.io.WritingMode;
+import net.minecraftforge.fml.config.ModConfig.Type;
 import net.minecraftforge.common.ForgeConfigSpec;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-import org.apache.commons.lang3.tuple.Pair;
-
-import java.nio.file.Path;
-
 @Mod.EventBusSubscriber
 public class ModConfig {
-    private static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
-    public static final ForgeConfigSpec SPEC;
-    public static class Client {
-        public final ForgeConfigSpec.DoubleValue spyglassIntensity;
-
-        Client(ForgeConfigSpec.Builder builder) {
-            builder.comment("Client settings")
-                    .push("Client");
-
-            spyglassIntensity = builder
-                    .comment("The intensity of the spyglass color overlay (0.5 = 50%) [Default: 0.5]")
-                    .defineInRange("spyglassIntensity", 0.5, 0.01, 1.0);
-
-            builder.pop();
-        }
+    public static final ForgeConfigSpec COMMON;
+    public static final ForgeConfigSpec.IntValue InfinityTNTExplosionRadius;
+    public static final ForgeConfigSpec.IntValue InfinityTNTExplosionLength;
+    public static final ForgeConfigSpec.BooleanValue InfinityTNTCanBreakBedRock;
+    public static final ForgeConfigSpec.BooleanValue InfinityTNTCanBreakObsidian;
+public ModConfig() {}
+    public static void register() {
+        ModLoadingContext.get().registerConfig(Type.COMMON, COMMON);
     }
 
-    public static final ForgeConfigSpec clientSpec;
-    public static final Client CLIENT;
+
+    private static ForgeConfigSpec.BooleanValue buildBoolean(ForgeConfigSpec.Builder builder, String name, boolean defaultValue, String comment) {
+        return builder.comment(comment).translation(name).define(name, defaultValue);
+    }
+
+    private static ForgeConfigSpec.IntValue buildInt(ForgeConfigSpec.Builder builder, String name, int defaultValue, int min, int max, String comment) {
+        return builder.comment(comment).translation(name).defineInRange(name, defaultValue, min, max);
+    }
+
+    private static ForgeConfigSpec.DoubleValue buildDouble(ForgeConfigSpec.Builder builder, String name, double defaultValue, double min, double max, String comment) {
+        return builder.comment(comment).translation(name).defineInRange(name, defaultValue, min, max);
+    }
+
+    private static ForgeConfigSpec.LongValue buildLong(ForgeConfigSpec.Builder builder, String name, long defaultValue, long min, long max, String comment) {
+        return builder.comment(comment).translation(name).defineInRange(name, defaultValue, min, max);
+    }
 
     static {
-        final Pair<Client, ForgeConfigSpec> specPair = new ForgeConfigSpec.Builder().configure(Client::new);
-        clientSpec = specPair.getRight();
-        CLIENT = specPair.getLeft();
-    }
-    public static final ForgeConfigSpec.ConfigValue<Float> EXPLOSION_RADIUS;
-    public static final ForgeConfigSpec.ConfigValue<Boolean> ALLOW_BREAK_BEDROCK;
-    public static final ForgeConfigSpec.ConfigValue<Boolean> ALLOW_BREAK_OBSIDIAN;
-
-    static {
-        BUILDER.push("Infinity TNT Configuration");
-
-        // 爆炸半径配置（默认100.0）
-        EXPLOSION_RADIUS = BUILDER
-                .translation("infinity_tnt_explosion_radius")
-                .define("explosion_radius", 100.0F);
-
-        // 是否允许破坏基岩（默认不允许）
-        ALLOW_BREAK_BEDROCK = BUILDER
-                .translation("can_break_bedrock")
-                .define("allow_break_bedrock", false);
-
-        // 是否允许破坏黑曜石（默认不允许）
-        ALLOW_BREAK_OBSIDIAN = BUILDER
-                .translation("can_break_obsidian")
-                .define("allow_break_obsidian", false);
-
-        BUILDER.pop();
-        SPEC = BUILDER.build();
+        ForgeConfigSpec.Builder common = new ForgeConfigSpec.Builder();
+        common.comment("Avaritia Expand Common Config");
+        common.push("block");
+        InfinityTNTExplosionRadius = buildInt(common, "InfinityTNT Radius",
+                100,0,1000,
+                "The explosion radius of InfinityTNT");
+        InfinityTNTExplosionLength = buildInt(common, "InfinityTNT Length",
+                -40,-500,0,
+                "The explosion length of InfinityTNT");
+        InfinityTNTCanBreakBedRock = buildBoolean(common, "InfinityTNT Break BedRock",
+                true,
+                "Can InfinityTNT break bedrock?");
+        InfinityTNTCanBreakObsidian = buildBoolean(common, "InfinityTNT Break Obsidian",
+                true,
+                "Can InfinityTNT break obsidian?");
+        common.pop();
+        COMMON = common.build();
     }
 
-
-    public static void loadConfig(ForgeConfigSpec spec, Path path) {
-        final CommentedFileConfig configData = CommentedFileConfig.builder(path)
-                .sync()
-                .autosave()
-                .writingMode(WritingMode.REPLACE)
-                .build();
-        configData.load();
-        spec.setConfig(configData);
-    }
 }

@@ -1,0 +1,38 @@
+{
+  "parent": "avaritia:main/neutron_ingot",
+  "criteria": {
+    "main": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "avaritia_expand:neutron_shears"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.avaritia_expand.neutron_shears.desc"
+    },
+    "frame": "goal",
+    "hidden": true,
+    "icon": {
+      "item": "avaritia_expand:neutron_shears"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.avaritia_expand.neutron_shears.title"
+    }
+  },
+  "requirements": [
+    [
+      "main"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

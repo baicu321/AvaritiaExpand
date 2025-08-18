@@ -1,6 +1,8 @@
 package com.cu6.avaritia_expand.item.tool;
 
 import com.cu6.avaritia_expand.entity.custom.InfinityFishingHook;
+import committee.nova.mods.avaritia.common.entity.ImmortalItemEntity;
+import committee.nova.mods.avaritia.init.registry.ModEntities;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
@@ -9,6 +11,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -16,6 +19,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraftforge.common.ToolAction;
 import net.minecraftforge.common.ToolActions;
+import org.jetbrains.annotations.Nullable;
 
 public class InfinityFishingRod extends Item {
     public InfinityFishingRod(Properties pProperties) {
@@ -82,4 +86,14 @@ public class InfinityFishingRod extends Item {
     public boolean isDamageable(ItemStack stack) {
         return false;
     }
+
+    public boolean hasCustomEntity(ItemStack stack) {
+        return true;
+    }
+
+    public @Nullable Entity createEntity(Level level, Entity location, ItemStack stack) {
+        return ImmortalItemEntity.create(ModEntities.IMMORTAL.get(), level, location.getX(), location.getY(), location.getZ(), stack);
+    }
+
+
 }

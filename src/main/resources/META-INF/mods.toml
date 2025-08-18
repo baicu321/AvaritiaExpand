@@ -9,9 +9,8 @@ license="${mod_license}"
 [[mods]]
 
 modId="avaritia_expand"
-
+logoFile = "logo.png"
 version="${mod_version}"
-
 displayName="${mod_name}"
 
 authors="${mod_authors}"

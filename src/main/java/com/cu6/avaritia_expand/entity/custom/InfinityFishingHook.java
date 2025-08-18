@@ -342,17 +342,7 @@ public class InfinityFishingHook extends FishingHook {
 
                     this.playSound(SoundEvents.END_PORTAL_FRAME_FILL, 1.0F, 1.0F + (this.random.nextFloat() - this.random.nextFloat()) * 0.4F);
 
-
-                    //this.playSound(SoundEvents.BUCKET_FILL_LAVA, 0.5F, 1.0F + (this.random.nextFloat() - this.random.nextFloat()) * 0.4F);
-
                 double d3 = this.getY() + (double)0.5F;
-
-                    //serverlevel.sendParticles(ParticleTypes.BUBBLE, this.getX(), d3, this.getZ(), (int) (1.0F + this.getBbWidth() * 20.0F), (double) this.getBbWidth(), (double) 0.0F, (double) this.getBbWidth(), (double) 0.2F);
-                    //serverlevel.sendParticles(ParticleTypes.FISHING, this.getX(), d3, this.getZ(), (int) (1.0F + this.getBbWidth() * 20.0F), (double) this.getBbWidth(), (double) 0.0F, (double) this.getBbWidth(), (double) 0.2F);
-
-                   // serverlevel.sendParticles(ParticleTypes.LAVA, this.getX(), d3, this.getZ(), (int)(1.0F + this.getBbWidth() * 10.0F), this.getBbWidth() * 0.5, 0.0, this.getBbWidth() * 0.5, 0.1);
-                   // serverlevel.sendParticles(ParticleTypes.SMOKE, this.getX(), d3, this.getZ(), (int)(1.0F + this.getBbWidth() * 15.0F), this.getBbWidth(), 0.0, this.getBbWidth(), 0.3);
-
                 this.nibble = Mth.nextInt(this.random, 20, 40);
                 this.getEntityData().set(DATA_BITING, true);
             }
@@ -389,7 +379,7 @@ public class InfinityFishingHook extends FishingHook {
                 this.timeUntilHooked = Mth.nextInt(this.random, 20, 80);
             }
         } else {
-            this.timeUntilLured = Mth.nextInt(this.random, 60, 100);
+            this.timeUntilLured = Mth.nextInt(this.random, 40, 80);
             this.timeUntilLured -= this.lureSpeed * 20 * 5;
         }
 
