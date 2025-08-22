@@ -19,7 +19,6 @@ public class ModItemProperties {
             registerShieldBlocking(ModItems.CRYSTAL_SHIELD.get());
             registerBowProperties(ModItems.BLAZE_BOW.get());
             registerBowProperties(ModItems.CRYSTAL_BOW.get());
-            registerSpyglassUsing(ModItems.NEUTRON_SPYGLASS.get());
         });
     }
 
@@ -75,14 +74,5 @@ public class ModItemProperties {
                             entity.getUseItem() == stack ? 1.0F : 0.0F;
                 });
 
-    }
-    private static void registerSpyglassUsing(Item item) {
-        ItemProperties.register(item,
-                new ResourceLocation("using"),
-                (stack, world, entity, seed) -> {
-                    return entity != null &&
-                            entity.isUsingItem() &&
-                            entity.getUseItem() == stack ? 1.0F : 0.0F;
-                });
     }
 }

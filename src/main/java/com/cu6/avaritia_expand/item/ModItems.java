@@ -1,17 +1,19 @@
 package com.cu6.avaritia_expand.item;
 
 import com.cu6.avaritia_expand.AvaritiaExpand;
-import com.cu6.avaritia_expand.item.armor.*;
+import com.cu6.avaritia_expand.item.armor.blaze.*;
+import com.cu6.avaritia_expand.item.armor.crystal.CrystalBoots;
+import com.cu6.avaritia_expand.item.armor.crystal.CrystalChestplate;
+import com.cu6.avaritia_expand.item.armor.crystal.CrystalHelmet;
+import com.cu6.avaritia_expand.item.armor.crystal.CrystalLeggings;
 import com.cu6.avaritia_expand.item.shield.BlazeShieldItem;
 import com.cu6.avaritia_expand.item.shield.CrystalShieldItem;
 import com.cu6.avaritia_expand.item.tool.*;
 import committee.nova.mods.avaritia.init.registry.ModRarities;
 
 import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.BowItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ShearsItem;
-import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.item.Tiers;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -33,13 +35,13 @@ public class ModItems {
             ()-> new CrystalBoots(ModArmorMaterials.CRYSTAL_MATRIX, ArmorItem.Type.BOOTS,new Item.Properties().rarity(ModRarities.EPIC).fireResistant()));
 //blaze armor
     public static final RegistryObject<Item> BLAZE_HELMET = ITEMS.register("blaze_helmet",
-            ()-> new BlazeArmorItem(ModArmorMaterials.BLAZE_CUBE, BlazeArmorItem.Type.HELMET,new Item.Properties().rarity(ModRarities.EPIC).fireResistant()));
+            ()-> new BlazeHelmet(ModArmorMaterials.BLAZE_CUBE, BlazeArmorItem.Type.HELMET,new Item.Properties().rarity(ModRarities.EPIC).fireResistant()));
     public static final RegistryObject<Item> BLAZE_CHESTPLATE = ITEMS.register("blaze_chestplate",
-            ()-> new BlazeArmorItem(ModArmorMaterials.BLAZE_CUBE, BlazeArmorItem.Type.CHESTPLATE,new Item.Properties().rarity(ModRarities.EPIC).fireResistant()));
+            ()-> new BlazeChestplate(ModArmorMaterials.BLAZE_CUBE, BlazeArmorItem.Type.CHESTPLATE,new Item.Properties().rarity(ModRarities.EPIC).fireResistant()));
     public static final RegistryObject<Item> BLAZE_LEGGINGS = ITEMS.register("blaze_leggings",
-            ()-> new BlazeArmorItem(ModArmorMaterials.BLAZE_CUBE, BlazeArmorItem.Type.LEGGINGS,new Item.Properties().rarity(ModRarities.EPIC).fireResistant()));
+            ()-> new BlazeLeggings(ModArmorMaterials.BLAZE_CUBE, BlazeArmorItem.Type.LEGGINGS,new Item.Properties().rarity(ModRarities.EPIC).fireResistant()));
     public static final RegistryObject<Item> BLAZE_BOOTS = ITEMS.register("blaze_boots",
-            ()-> new BlazeArmorItem(ModArmorMaterials.BLAZE_CUBE, BlazeArmorItem.Type.BOOTS,new Item.Properties().rarity(ModRarities.EPIC).fireResistant()));
+            ()-> new BlazeBoots(ModArmorMaterials.BLAZE_CUBE, BlazeArmorItem.Type.BOOTS,new Item.Properties().rarity(ModRarities.EPIC).fireResistant()));
 //blaze tools
     public static final RegistryObject<Item> BLAZE_SHIELD = ITEMS.register("blaze_shield",
         ()-> new BlazeShieldItem(new Item.Properties().rarity(ModRarities.EPIC).durability(7777).fireResistant()));
@@ -54,13 +56,13 @@ public static final RegistryObject<Item> CRYSTAL_SHIELD = ITEMS.register("crysta
     public static final RegistryObject<Item> INFINITY_FISHINGROD = ITEMS.register("infinity_fishing_rod",
         ()-> new InfinityFishingRod(new Item.Properties().rarity(ModRarities.COSMIC).durability(9999).fireResistant()));
 //neutron_tools
-public static final RegistryObject<Item> NEUTRON_SPYGLASS = ITEMS.register("neutron_spyglass",
-        ()-> new NeutronSpyglass(new Item.Properties().rarity(ModRarities.COSMIC).fireResistant()));
     public static final RegistryObject<Item> NEUTRON_SHEARS = ITEMS.register("neutron_shears",
             ()-> new NeutronShears(new Item.Properties().rarity(ModRarities.COSMIC).fireResistant().stacksTo(1)));
+//endest_items
+    public static final RegistryObject<Item> ENDEST_WATCH = ITEMS.register("endest_watch",
+        ()-> new EndestWatch(new Item.Properties().rarity(ModRarities.COSMIC).fireResistant().stacksTo(1)));
 
-
-//Infinity_Items
+//Infinity_Tools
     public static final RegistryObject<Item> INFINITY_EXPERIENCE_BOTTLE = ITEMS.register("infinity_experience_bottle",
         ()-> new InfinityExperienceBottle(new Item.Properties().rarity(ModRarities.COSMIC).stacksTo(1).fireResistant()));
 
@@ -73,6 +75,9 @@ public static final RegistryObject<Item> BLAZE_NUGGET = ITEMS.register("blaze_nu
 public static final RegistryObject<Item> CRYSTAL_NUGGET = ITEMS.register("crystal_nugget",
         ()-> new Item(new Item.Properties().rarity(ModRarities.EPIC)));
 
+//neutron_Items
+public static final RegistryObject<Item> CLONE_CORE = ITEMS.register("clone_core",
+        ()-> new Item(new Item.Properties().rarity(ModRarities.EPIC)));
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
     }

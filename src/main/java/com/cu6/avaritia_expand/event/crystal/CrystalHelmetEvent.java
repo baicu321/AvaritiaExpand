@@ -1,7 +1,6 @@
 package com.cu6.avaritia_expand.event.crystal;
 
-import com.cu6.avaritia_expand.item.armor.CrystalHelmet;
-import net.minecraft.core.particles.ParticleTypes;
+import com.cu6.avaritia_expand.item.armor.crystal.CrystalHelmet;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;

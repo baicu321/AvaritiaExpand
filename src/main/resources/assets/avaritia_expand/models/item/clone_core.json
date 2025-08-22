@@ -1,0 +1,14 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "avaritia_expand:item/clone_core",
+    "halo": "avaritia:misc/halo"
+  },
+  "loader": "avaritia:halo",
+  "halo": {
+    "texture": "#halo",
+    "color": -16777216,
+    "size": 0,
+    "pulse": true
+  }
+}

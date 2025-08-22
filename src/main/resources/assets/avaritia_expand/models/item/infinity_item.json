@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": { "layer0": "avaritia_expand:item/infinity_item" },
-  "loader": "avaritia_expand:cosmic",
-  "cosmic": { "mask": "avaritia:item/your_item_mask" }
-}

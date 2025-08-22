@@ -37,5 +37,9 @@
   "item.avaritia_expand.neutron_shears": "Neutronium Shears",
   "tooltip.avaritia_expand.neutron_shears": "§7Molded in a day...",
   "advancements.avaritia_expand.neutron_shears.desc": "Craft Neutronium Shears",
-  "advancements.avaritia_expand.neutron_shears.title": "EnderMan Nightmare!"
+  "advancements.avaritia_expand.neutron_shears.title": "EnderMan Nightmare!",
+  "item.avaritia_expand.endest_watch": "Endest Watch",
+  "item.avaritia_expand.endest_watch.tooltip": "Don't look too long.",
+  "item.avaritia_expand.clone_core": "Clone Core"
+
 }

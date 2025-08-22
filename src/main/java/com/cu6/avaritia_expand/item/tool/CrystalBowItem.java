@@ -116,10 +116,9 @@ public class CrystalBowItem extends BowItem {
 
     @Override
     public void onCraftedBy(ItemStack stack, Level level, Player player) {
-        super.onCraftedBy(stack, level, player);
-
         stack.enchant(Enchantments.INFINITY_ARROWS,1);
         stack.enchant(Enchantments.MULTISHOT,1);
+        super.onCraftedBy(stack, level, player);
     }
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {

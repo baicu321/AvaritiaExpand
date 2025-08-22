@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "avaritia:neutron_gear"
+    },
+    "A": {
+      "item": "avaritia:record_fragment"
+    }
+
+  },
+  "pattern": [
+    " A ",
+    "ABA",
+    " A "
+  ],
+  "result": {
+    "item": "avaritia_expand:clone_core"
+  },
+  "show_notification": true
+}

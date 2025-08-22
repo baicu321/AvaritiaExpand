@@ -1,0 +1,32 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "avaritia:endest_pearl"
+    },
+    "B":{
+      "item": "minecraft:clock"
+    },
+    "C": {
+      "item": "avaritia:diamond_lattice"
+    },
+    "D": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "       ",
+    "   A   ",
+    "  DBD  ",
+    "  DCD  ",
+    "  DDD  ",
+    "       ",
+    "       "
+  ],
+  "result": {
+    "item": "avaritia_expand:endest_watch"
+  },
+  "show_notification": true,
+  "tier": 3
+}

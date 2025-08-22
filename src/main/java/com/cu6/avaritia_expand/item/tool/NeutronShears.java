@@ -1,28 +1,21 @@
 package com.cu6.avaritia_expand.item.tool;
 
-import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.monster.Blaze;
 import net.minecraft.world.entity.monster.EnderMan;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ShearsItem;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
-import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.IForgeShearable;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-import java.util.Random;
 
 public class NeutronShears extends ShearsItem {
     public NeutronShears(Properties pProperties) {
@@ -31,8 +24,8 @@ public class NeutronShears extends ShearsItem {
 
     @Override
     public InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity target, InteractionHand hand) {
+        Level level = player.level();
         if (target instanceof EnderMan enderman) {
-            Level level = player.level();
             if (!level.isClientSide) {
                 var nbt = enderman.getPersistentData();
 
@@ -46,9 +39,23 @@ public class NeutronShears extends ShearsItem {
                 enderman.spawnAtLocation(Items.ENDER_PEARL);
                 enderman.teleportRelative(0.0D, 1.0D, 0.0D);
             }
-            return InteractionResult.sidedSuccess(level.isClientSide);
         }
-        return super.interactLivingEntity(stack, player, target, hand);
+            if (target instanceof Blaze blaze) {
+                if (!level.isClientSide) {
+                    var nbt = blaze.getPersistentData();
+
+                    long gameTime = level.getGameTime();
+                    long nextUse = nbt.getLong("BlazeShearsCooldown");
+                    if (gameTime < nextUse) {
+                        return InteractionResult.FAIL;
+                    }
+                    nbt.putLong("BlazeShearsCooldown", gameTime + 24000);
+                    blaze.playSound(SoundEvents.BLAZE_HURT);
+                    blaze.spawnAtLocation(Items.BLAZE_ROD);
+                    blaze.teleportRelative(0.0D, 1.0D, 0.0D);
+                }
+            }
+        return InteractionResult.sidedSuccess(level.isClientSide);
     }
 
     @Override

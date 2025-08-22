@@ -21,7 +21,7 @@ import java.util.List;
 
 public class InfinityTNTEntity extends Entity implements TraceableEntity {
     private static final EntityDataAccessor<Integer> DATA_FUSE_ID;
-    private static final int DEFAULT_FUSE_TIME = 80;
+    private static final int DEFAULT_FUSE_TIME = ModConfig.InfinityTNTExplosionTime.get();
     private int explosionRadius;
     @Nullable
     private LivingEntity owner;

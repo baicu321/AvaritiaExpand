@@ -1,6 +1,6 @@
 package com.cu6.avaritia_expand.event.crystal;
 
-import com.cu6.avaritia_expand.item.armor.CrystalBoots;
+import com.cu6.avaritia_expand.item.armor.crystal.CrystalBoots;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -30,10 +30,6 @@ public class CrystalBootsEvent {
 
                 event.setCanceled(true);
 
-
-                player.level().playSound(null, player.blockPosition(),
-                        SoundEvents.ARMOR_EQUIP_DIAMOND, SoundSource.PLAYERS,
-                        0.5F, 1.0F);
 
 
             }

@@ -337,6 +337,15 @@ public class InfinityFishingHook extends FishingHook {
                     float f4 = f2 * 0.04F;
                     serverlevel.sendParticles(ParticleTypes.FISHING, d0, d1, d2, 0, (double)f4, 0.01, (double)(-f3), (double)1.0F);
                     serverlevel.sendParticles(ParticleTypes.FISHING, d0, d1, d2, 0, (double)(-f4), 0.01, (double)f3, (double)1.0F);
+                }else if (blockstate.is(Blocks.LAVA)){
+                    if (this.random.nextFloat() < 0.15F) {
+                        serverlevel.sendParticles(ParticleTypes.LAVA, d0, d1 - (double)0.1F, d2, 1, (double)f1, 0.1, (double)f2, (double)0.0F);
+                    }
+
+                    float f3 = f1 * 0.04F;
+                    float f4 = f2 * 0.04F;
+                    serverlevel.sendParticles(ParticleTypes.SMOKE, d0, d1, d2, 0, (double)f4, 0.01, (double)(-f3), (double)1.0F);
+                    serverlevel.sendParticles(ParticleTypes.SMOKE, d0, d1, d2, 0, (double)(-f4), 0.01, (double)f3, (double)1.0F);
                 }
             } else {
 
@@ -376,7 +385,7 @@ public class InfinityFishingHook extends FishingHook {
 
             if (this.timeUntilLured <= 0) {
                 this.fishAngle = Mth.nextFloat(this.random, 0.0F, 360.0F);
-                this.timeUntilHooked = Mth.nextInt(this.random, 20, 80);
+                this.timeUntilHooked = Mth.nextInt(this.random, 80, 120);
             }
         } else {
             this.timeUntilLured = Mth.nextInt(this.random, 40, 80);

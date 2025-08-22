@@ -36,6 +36,8 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.INFINITY_FISHINGROD.get());
                         output.accept(ModItems.INFINITY_EXPERIENCE_BOTTLE.get());
                         output.accept(ModItems.NEUTRON_SHEARS.get());
+                        output.accept(ModItems.ENDEST_WATCH.get());
+                        output.accept(ModItems.CLONE_CORE.get());
                         //block
                         output.accept(ModBlocks.BLAZE_FURNACE.get());
                         output.accept(ModBlocks.CRYSTAL_FURNACE.get());

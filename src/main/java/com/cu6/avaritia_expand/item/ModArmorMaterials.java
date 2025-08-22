@@ -1,7 +1,6 @@
 package com.cu6.avaritia_expand.item;
 
 import com.cu6.avaritia_expand.AvaritiaExpand;
-import committee.nova.mods.avaritia.Avaritia;
 import committee.nova.mods.avaritia.init.registry.ModBlocks;
 import committee.nova.mods.avaritia.init.registry.ModItems;
 import net.minecraft.sounds.SoundEvent;

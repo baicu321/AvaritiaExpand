@@ -157,8 +157,8 @@ public class BlazeBowItem extends BowItem {
 
     @Override
     public void onCraftedBy(ItemStack stack, Level level, Player player) {
-        super.onCraftedBy(stack, level, player);
         stack.enchant(Enchantments.FLAMING_ARROWS, 10);
+        super.onCraftedBy(stack, level, player);
     }
 
     @Override

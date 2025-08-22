@@ -1,7 +1,8 @@
 package com.cu6.avaritia_expand.event.crystal;
 
 import com.cu6.avaritia_expand.AvaritiaExpand;
-import com.cu6.avaritia_expand.item.armor.CrystalChestplate;
+import com.cu6.avaritia_expand.item.ModItems;
+import com.cu6.avaritia_expand.item.armor.crystal.CrystalChestplate;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;

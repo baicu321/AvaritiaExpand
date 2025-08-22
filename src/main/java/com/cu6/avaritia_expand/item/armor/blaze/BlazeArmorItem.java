@@ -1,4 +1,4 @@
-package com.cu6.avaritia_expand.item.armor;
+package com.cu6.avaritia_expand.item.armor.blaze;
 
 import com.cu6.avaritia_expand.item.ModArmorMaterials;
 import com.google.common.collect.ImmutableMap;
@@ -17,7 +17,7 @@ public class BlazeArmorItem extends ArmorItem {
     public static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<ArmorMaterial,MobEffectInstance>())
                     .put(ModArmorMaterials.BLAZE_CUBE,
-                            new MobEffectInstance(MobEffects.FIRE_RESISTANCE,2147483647,0,false,false,false)).build();
+                            new MobEffectInstance(MobEffects.FIRE_RESISTANCE,20,0,false,false,false)).build();
     public BlazeArmorItem(ArmorMaterial pMaterial, Type pType, Properties pProperties) {
         super(pMaterial, pType, pProperties);
     }
@@ -27,9 +27,11 @@ public class BlazeArmorItem extends ArmorItem {
         if (!level.isClientSide()){
             if (hasFullSuitOfArmorOn(player)){
                 evaluateArmorEffects(player);
-            }else{
-                if (!hasFullSuitOfArmorOn(player)){
-                    removeAllArmorEffects(player);
+                if (player.isInLava()) {
+                    if (player.hasEffect(MobEffects.REGENERATION)) {
+                    }else {
+                        player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, 1, false, false, false));
+                    }
                 }
             }
         }
