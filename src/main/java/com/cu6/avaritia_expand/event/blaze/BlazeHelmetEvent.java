@@ -20,6 +20,7 @@ public class BlazeHelmetEvent {
             Player player = (Player) event.getEntity();
             if (isWearingBlazeHelmet(player)) {
                 player.removeEffect(MobEffects.BLINDNESS);
+                player.removeEffect(MobEffects.DARKNESS);
             }
         }
     }

@@ -40,5 +40,7 @@
   "advancements.avaritia_expand.neutron_shears.title": "末影人的噩梦",
   "item.avaritia_expand.endest_watch": "终望怀表",
   "item.avaritia_expand.endest_watch.tooltip": "§7别盯太久.",
-  "item.avaritia_expand.clone_core": "克隆核心"
+  "item.avaritia_expand.clone_core": "克隆核心",
+  "block.avaritia_expand.neutron_decompose": "§b中子态素解构机",
+  "title.avaritia_expand.neutron_decompose": "中子态素解构机"
 }

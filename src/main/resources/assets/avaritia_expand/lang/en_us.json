@@ -40,6 +40,8 @@
   "advancements.avaritia_expand.neutron_shears.title": "EnderMan Nightmare!",
   "item.avaritia_expand.endest_watch": "Endest Watch",
   "item.avaritia_expand.endest_watch.tooltip": "Don't look too long.",
-  "item.avaritia_expand.clone_core": "Clone Core"
+  "item.avaritia_expand.clone_core": "Clone Core",
+  "block.avaritia_expand.neutron_decompose": "§bNeutronium Decomposer",
+  "title.avaritia_expand.neutron_decompose": "Neutronium Decomposer"
 
 }

@@ -23,6 +23,8 @@ public class ModMenuTypes {
             registerMenuType("blaze_furnace_menu",BlazeFurnaceMenu::new);
     public static final RegistryObject<MenuType<CrystalFurnaceMenu>> CRYSTAL_FURNACE_MENU =
             registerMenuType("crystal_furnace_menu",CrystalFurnaceMenu::new);
+    public static final RegistryObject<MenuType<NeutronDecomposeMenu>> NEUTRON_DECOMPOSE_MENU =
+            registerMenuType("neutron_decompose_menu",NeutronDecomposeMenu::new);
     public static void register(IEventBus eventBus){
         MENUS.register(eventBus);
     }

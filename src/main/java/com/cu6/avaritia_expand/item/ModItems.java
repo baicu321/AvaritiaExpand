@@ -78,6 +78,8 @@ public static final RegistryObject<Item> CRYSTAL_NUGGET = ITEMS.register("crysta
 //neutron_Items
 public static final RegistryObject<Item> CLONE_CORE = ITEMS.register("clone_core",
         ()-> new Item(new Item.Properties().rarity(ModRarities.EPIC)));
+
+
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
     }

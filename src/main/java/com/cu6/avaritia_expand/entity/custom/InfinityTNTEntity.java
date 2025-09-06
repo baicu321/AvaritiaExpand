@@ -17,6 +17,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 
 import javax.annotation.Nullable;
+import java.util.LinkedList;
 import java.util.List;
 
 public class InfinityTNTEntity extends Entity implements TraceableEntity {

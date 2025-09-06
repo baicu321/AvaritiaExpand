@@ -20,6 +20,10 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("crystal_furnace_be", ()->
                     BlockEntityType.Builder.of(CrystalFurnaceBlockEntity::new,
                             ModBlocks.CRYSTAL_FURNACE.get()).build(null));
+    public static final RegistryObject<BlockEntityType<NeutronDecomposeBlockEntity>> NEUTRON_DECOMPOSE_BE =
+            BLOCK_ENTITIES.register("neutron_decompose_be", ()->
+                    BlockEntityType.Builder.of(NeutronDecomposeBlockEntity::new,
+                            ModBlocks.NEUTRON_DECOMPOSE.get()).build(null));
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

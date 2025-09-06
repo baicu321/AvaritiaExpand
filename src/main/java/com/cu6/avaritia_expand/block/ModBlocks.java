@@ -23,11 +23,13 @@ public class ModBlocks {
     public static final RegistryObject<Block> BLAZE_FURNACE = registerBlock("blaze_furnace",
             ()-> new BlazeFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).lightLevel(value -> 11).noOcclusion()));
     public static final RegistryObject<Block> CRYSTAL_FURNACE = registerBlock("crystal_furnace",
-            ()-> new CrystalFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).lightLevel(value -> 8).noOcclusion()));
+            ()-> new CrystalFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).noOcclusion()));
     public static final RegistryObject<Block> INFINITY_TNT = registerBlock("infinity_tnt",
             ()-> new InfinityTNT(BlockBehaviour.Properties.copy(Blocks.TNT).lightLevel(value -> 15).noOcclusion()));
     public static final RegistryObject<Block> CRYSTAL_TNT = registerBlock("crystal_tnt",
             ()-> new CrystalTNT(BlockBehaviour.Properties.copy(Blocks.TNT).lightLevel(value -> 13).noOcclusion()));
+    public static final RegistryObject<Block> NEUTRON_DECOMPOSE = registerBlock("neutron_decompose",
+            ()-> new NeutronDecomposeBlock(BlockBehaviour.Properties.copy(Blocks.STONE).noOcclusion()));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
