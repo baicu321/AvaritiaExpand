@@ -9,7 +9,6 @@ public class ModConfig {
     public static final ForgeConfigSpec COMMON;
     public static final ForgeConfigSpec.IntValue InfinityTNTExplosionRadius;
     public static final ForgeConfigSpec.IntValue InfinityTNTExplosionLength;
-    public static final ForgeConfigSpec.IntValue InfinityTNTExplosionTime;
     public static final ForgeConfigSpec.BooleanValue InfinityTNTCanBreakBedRock;
     public static final ForgeConfigSpec.BooleanValue InfinityTNTCanBreakObsidian;
 public ModConfig() {}
@@ -44,9 +43,6 @@ public ModConfig() {}
         InfinityTNTExplosionLength = buildInt(common, "InfinityTNT Length",
                 -40,-500,0,
                 "The explosion length of InfinityTNT");
-        InfinityTNTExplosionTime = buildInt(common, "InfinityTNT Time",
-                100,0,10000,
-                "The explosion time of InfinityTNT");
         InfinityTNTCanBreakBedRock = buildBoolean(common, "InfinityTNT Break BedRock",
                 true,
                 "Can InfinityTNT break bedrock?");

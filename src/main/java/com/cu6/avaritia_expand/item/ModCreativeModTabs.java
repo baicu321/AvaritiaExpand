@@ -41,6 +41,7 @@ public class ModCreativeModTabs {
                         //block
                         output.accept(ModBlocks.BLAZE_FURNACE.get());
                         output.accept(ModBlocks.CRYSTAL_FURNACE.get());
+                        output.accept(ModBlocks.NEUTRON_DECOMPOSE.get());
                         output.accept(ModBlocks.CRYSTAL_TNT.get());
                         output.accept(ModBlocks.INFINITY_TNT.get());
                     })

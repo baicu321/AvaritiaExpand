@@ -23,7 +23,7 @@ public class NeutronDecomposeScreen extends AbstractContainerScreen<NeutronDecom
         super.init();
         this.inventoryLabelY = 72;
         this.inventoryLabelX = 7;
-        this.titleLabelX = 67;
+        this.titleLabelX = 60;
         this.titleLabelY = 6;
     }
 

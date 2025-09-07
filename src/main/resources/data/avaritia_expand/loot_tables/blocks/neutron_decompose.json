@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "avaritia_expand:neutron_decompose"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "avaritia_expand:blocks/neutron_decompose"
+}

@@ -1,0 +1,37 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "avaritia:crystal_matrix_ingot"
+    },
+    "I": {
+      "item": "minecraft:iron_block"
+    },
+    "Q": {
+      "item": "minecraft:quartz_block"
+    },
+    "R": {
+      "item": "avaritia:neutron_ingot"
+    },
+    "S": {
+      "item": "avaritia_expand:clone_core"
+    }
+  },
+  "pattern": [
+    "IIQQQQQII",
+    "I  RRR  I",
+    "C  RRR  C",
+    "I  RRR  I",
+    "C RRSRR C",
+    "I RRRRR I",
+    "I       I",
+    "I       I",
+    "IIICICIII"
+  ],
+  "result": {
+    "item": "avaritia_expand:neutron_decompose"
+  },
+  "show_notification": true,
+  "tier": 4
+}

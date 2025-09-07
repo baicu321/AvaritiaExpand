@@ -9,7 +9,9 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -22,14 +24,13 @@ import java.util.List;
 
 public class InfinityTNTEntity extends Entity implements TraceableEntity {
     private static final EntityDataAccessor<Integer> DATA_FUSE_ID;
-    private static final int DEFAULT_FUSE_TIME = ModConfig.InfinityTNTExplosionTime.get();
+    public static final int DEFAULT_FUSE_TIME = 1000;
     private int explosionRadius;
     @Nullable
     private LivingEntity owner;
 
-    public InfinityTNTEntity(EntityType<InfinityTNTEntity> type, Level level) {
+    public InfinityTNTEntity(EntityType<? extends InfinityTNTEntity> type, Level level) {
         super(type, level);
-
         this.explosionRadius = Math.round(ModConfig.InfinityTNTExplosionRadius.get());
     }
 
@@ -51,8 +52,6 @@ public class InfinityTNTEntity extends Entity implements TraceableEntity {
     protected void defineSynchedData() {
         this.entityData.define(DATA_FUSE_ID, DEFAULT_FUSE_TIME);
     }
-
-
     public void setExplosionRadius(int radius) {
         this.explosionRadius = radius;
     }
@@ -82,6 +81,11 @@ public class InfinityTNTEntity extends Entity implements TraceableEntity {
 
         int fuse = this.getFuse() - 1;
         this.setFuse(fuse);
+
+        if (fuse <= DEFAULT_FUSE_TIME / 2) {
+            int deathTime = DEFAULT_FUSE_TIME / 2 - fuse;
+        }
+
         if (fuse <= 0) {
             this.discard();
             if (!this.level().isClientSide) {
@@ -155,8 +159,14 @@ public class InfinityTNTEntity extends Entity implements TraceableEntity {
                         float damage = (float) (baseDamage * (1.0F - Math.min(distance, radius * radius) / (radius * radius)));
 
                         if (damage > 0) {
-                            entity.hurt(explosionDamage, damage);
+                            if (entity instanceof Player) {
+                                entity.hurt(explosionDamage,0);
+                            }
+                            else {
+                                entity.hurt(explosionDamage, damage);
+                            }
                         }
+
                     }
                 }
             }
@@ -167,6 +177,8 @@ public class InfinityTNTEntity extends Entity implements TraceableEntity {
     protected void explode() {
         createCircleExplosion();
     }
+
+
 
     protected void addAdditionalSaveData(CompoundTag pCompound) {
         pCompound.putShort("Fuse", (short)this.getFuse());

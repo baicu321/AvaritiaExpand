@@ -12,16 +12,28 @@
       "item": "avaritia:diamond_lattice"
     },
     "D": {
-      "item": "minecraft:iron_ingot"
+      "item": "avaritia:neutron_ingot"
+    },
+    "E": {
+      "item": "minecraft:ender_pearl"
+    },
+    "F": {
+      "item": "minecraft:ender_eye"
+    },
+    "G": {
+      "item": "minecraft:redstone_block"
+    },
+    "H": {
+      "item": "minecraft:nether_star"
     }
   },
   "pattern": [
-    "       ",
-    "   A   ",
-    "  DBD  ",
-    "  DCD  ",
-    "  DDD  ",
-    "       ",
+    "A      ",
+    " HDDDE ",
+    " DCBCD ",
+    " DBGBD ",
+    " DCBCD ",
+    " EDDDF ",
     "       "
   ],
   "result": {

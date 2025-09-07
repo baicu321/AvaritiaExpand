@@ -2,7 +2,7 @@
   "render_type": "cutout",
   "parent": "block/cube",
   "textures": {
-    "north": "avaritia_expand:block/crystal_furnace_front",
+    "north": "avaritia_expand:block/neutron_decompose",
     "east": "avaritia:block/machine/collector/collector_side_left",
     "south": "avaritia:block/machine/collector/frame",
     "west": "avaritia:block/machine/collector/collector_side_right",

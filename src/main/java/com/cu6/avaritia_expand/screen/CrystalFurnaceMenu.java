@@ -136,9 +136,18 @@ public class CrystalFurnaceMenu extends AbstractContainerMenu {
         }
         // 熔炉槽位 → 玩家背包
         else if (index < 36 + 21) { // 36-56是熔炉槽位
-            // 输出槽和输入槽的物品移回玩家背包
-            if (!moveItemStackTo(sourceStack, 0, 36, false)) {
-                return ItemStack.EMPTY;
+            // 检查是否为输出槽（0-15）
+            if (index >= 36 && index < 36 + 16) {
+                // 输出槽的物品移回玩家背包，优先放入快捷栏
+                if (!moveItemStackTo(sourceStack, 0, 36, false)) {
+                    return ItemStack.EMPTY;
+                }
+            }
+            // 输入槽（16-19）和燃料槽（20）的物品移回玩家背包
+            else {
+                if (!moveItemStackTo(sourceStack, 0, 36, false)) {
+                    return ItemStack.EMPTY;
+                }
             }
         } else {
             return ItemStack.EMPTY;
