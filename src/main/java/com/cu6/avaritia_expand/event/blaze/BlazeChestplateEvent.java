@@ -16,8 +16,15 @@ import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
+import java.util.HashSet;
+import java.util.Set;
+import java.util.UUID;
+
 @Mod.EventBusSubscriber(modid = AvaritiaExpand.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class BlazeChestplateEvent {
+    // Recursion guard to prevent infinite damage reflection loops
+    private static final ThreadLocal<Set<UUID>> processingEntities = ThreadLocal.withInitial(HashSet::new);
+
     @SubscribeEvent
     public static void onLivingTick(LivingEvent.LivingTickEvent event){
         if (event.getEntity() instanceof Player){
@@ -36,9 +43,22 @@ public class BlazeChestplateEvent {
                         (LivingEntity) source.getDirectEntity() : null;
 
                 if (attacker != null && attacker != player) {
-                    float reflectedDamage = event.getAmount() * 0.2f;
-                    DamageSource reflectedSource = player.level().damageSources().playerAttack(player);
-                    attacker.hurt(reflectedSource, reflectedDamage);
+                    UUID attackerId = attacker.getUUID();
+                    Set<UUID> processing = processingEntities.get();
+
+                    // Prevent recursion: skip if this attacker is already being processed
+                    if (processing.contains(attackerId)) {
+                        return;
+                    }
+
+                    processing.add(attackerId);
+                    try {
+                        float reflectedDamage = event.getAmount() * 0.2f;
+                        DamageSource reflectedSource = player.level().damageSources().playerAttack(player);
+                        attacker.hurt(reflectedSource, reflectedDamage);
+                    } finally {
+                        processing.remove(attackerId);
+                    }
                 }
             }
         }
